@@ -32,9 +32,6 @@ npm start
 # auto compile to es5.
 npm run dev
 
-# test cli
-npm run test
-
 ```
 
 ## develope and test
