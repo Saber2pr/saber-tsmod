@@ -24,8 +24,6 @@ export async function initPackageJson(packageInfor: IPackageInfor) {
     \"license\": \"ISC\",
     \"main\": \"./lib/index.js\",
     \"scripts\": {
-      \"init\": \"./script/__init__.sh\",
-      \"new-mod\": \"./script/_newModule_.sh\",
       \"start\": \"tsc --watch\",
       \"dev\": \"webpack --watch\"
     },
