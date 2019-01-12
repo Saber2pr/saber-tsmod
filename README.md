@@ -7,19 +7,29 @@
 ## start
 
 ```bash
-git clone https://github.com/Saber2pr/saber-tsmod.git
+npm install saber-tsmod -g
+```
+
+## Usage:
+
+```bash
+# init project.
+saber-tsmod init
+
+# create module and test file.
+saber-tsmod create <module>
 ```
 
 ```bash
-# install the typescript and webpack
+# install the typescript and webpack.
 npm install
 ```
 
 ```bash
-# auto compile to commonjs
+# auto compile to commonjs.
 npm start
 
-# auto compile to es5
+# auto compile to es5.
 npm run dev
 
 # test cli

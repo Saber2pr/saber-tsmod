@@ -16,7 +16,7 @@ export async function initHtml(packageInfor: IPackageInfor) {
   const { name, description, repository, author } = packageInfor
 
   // create html
-  const html = './index.html'
+  const html = `${process.cwd()}/index.html`
   const html_content = `<!DOCTYPE html>
  <html lang=\"en\">
  

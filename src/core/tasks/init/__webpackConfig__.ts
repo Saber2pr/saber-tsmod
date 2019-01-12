@@ -11,7 +11,7 @@ import { File } from 'saber-node'
  * @export
  */
 export async function initWebpackConfig() {
-  const webpackConfig = './webpack.config.js'
+  const webpackConfig = `${process.cwd()}/webpack.config.js`
   const webpackConfigContent = `const path = require('path');
 
   module.exports = {

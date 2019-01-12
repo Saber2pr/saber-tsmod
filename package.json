@@ -1,14 +1,16 @@
 {
   "name": "saber-tsmod",
   "version": "1.0.0",
-  "description": "",
+  "description": "a cli for ts dev.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Saber2pr/saber-tsmod.git"
   },
   "author": "saber2pr",
   "license": "ISC",
-  "main": "./lib/index.js",
+  "keywords": [
+    "cli", "typescript", "module", "file"
+  ],
   "scripts": {
     "test": "node ./lib/index.js",
     "start": "tsc --watch",

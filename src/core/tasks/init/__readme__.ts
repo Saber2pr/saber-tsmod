@@ -15,7 +15,7 @@ import { IPackageInfor } from '../../saber-tsmod'
 export async function initReadMe(packageInfor: IPackageInfor) {
   const { name, description, repository, author } = packageInfor
 
-  const readme = './README.md'
+  const readme = `${process.cwd()}/README.md`
   const readme_content = `# ${name}
 
   > ${description}

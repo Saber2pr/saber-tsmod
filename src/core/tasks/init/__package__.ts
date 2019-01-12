@@ -11,7 +11,7 @@ export async function initPackageJson(packageInfor: IPackageInfor) {
   const { name, description, repository, author } = packageInfor
 
   // create package.json
-  const filePath = './package.json'
+  const filePath = `${process.cwd()}/package.json`
   const content = `{
     \"name\": \"${name}\",
     \"version\": \"1.0.0\",

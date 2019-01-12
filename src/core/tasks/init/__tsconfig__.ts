@@ -7,7 +7,7 @@
 import { File } from 'saber-node'
 
 export async function initTsConfig() {
-  const tsconfig = './tsconfig.json'
+  const tsconfig = `${process.cwd()}/tsconfig.json`
   const tsconfigContent = `{
    \"compilerOptions\": {
      \"target\": \"es5\",
