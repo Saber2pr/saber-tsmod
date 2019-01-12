@@ -22,13 +22,22 @@ export async function createModuleFile(name: string) {
   await File.createFile(moduleFilePath, moduleFileContent)
 
   const moduleTest = `${test}/test_${rename}.ts`
-  const moduleTestContent = `import { ${rename} } from '../core/${name}'\nexport function test_${rename}(){console.log(${rename})}`
+  const moduleTestContent = `
+  import { ${rename} } from '../core/${name}'
+  
+  export function test_${rename}(){
+    console.log(${rename})
+  }`
   // create module test file
   await File.createFile(moduleTest, moduleTestContent)
 
   // create test entry
   const test_entry = `${test}/test.ts`
-  const module_test = `import { test_${rename} } from '../test/test_${rename}' \ntest_${rename}()\n`
+  const module_test = `
+  import { test_${rename} } from '../test/test_${rename}'
+  
+  test_${rename}()\n`
+
   if (!(await Path.isExist(test_entry))) {
     await File.createFile(test_entry, module_test)
   } else {
