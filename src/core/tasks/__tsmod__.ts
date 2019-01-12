@@ -29,15 +29,15 @@ export async function createModuleFile(name: string) {
   // create test entry
   const test_entry = `${test}/test.ts`
   const module_test = `import { test_${rename} } from '../test/test_${rename}' \ntest_${rename}()\n`
-  if (!Path.isExist(test_entry)) {
+  if (!(await Path.isExist(test_entry))) {
     await File.createFile(test_entry, module_test)
   } else {
     await File.pushFile(test_entry, module_test)
   }
   // create export
   const export_entry = `${root}/index.ts`
-  if (!Path.isExist(export_entry)) {
-    const export_entry_content = `export * from '${core}/${name}'`
+  if (!(await Path.isExist(export_entry))) {
+    const export_entry_content = `export * from './core/${name}'`
     await File.createFile(export_entry, export_entry_content)
   }
 
