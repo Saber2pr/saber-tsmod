@@ -16,8 +16,7 @@
   ],
   "scripts": {
     "test": "node ./lib/index.js",
-    "start": "tsc --watch",
-    "dev": "webpack --watch"
+    "start": "tsc --watch"
   },
   "bin": "./lib/index.js",
   "devDependencies": {
