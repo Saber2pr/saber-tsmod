@@ -16,6 +16,7 @@ export async function initTsConfig() {
      \"outDir\": \"./lib\",
      \"esModuleInterop\": true,
      \"lib\": [
+      \"dom\",
       \"es2015\"
     ]
    },
