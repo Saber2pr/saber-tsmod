@@ -1,0 +1,23 @@
+{
+  "name": "saber-tsmod",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saber2pr/saber-tsmod.git"
+  },
+  "author": "saber2pr",
+  "license": "ISC",
+  "main": "./lib/index.js",
+  "scripts": {
+    "tsmod": "node ./script/index.js",
+    "start": "tsc --watch",
+    "dev": "webpack --watch"
+  },
+  "devDependencies": {
+    "typescript": "^3.2.1"
+  },
+  "dependencies": {
+    "saber-node": "^1.0.3"
+  }
+}
