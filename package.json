@@ -10,10 +10,11 @@
   "license": "ISC",
   "main": "./lib/index.js",
   "scripts": {
-    "tsmod": "node ./script/index.js",
+    "test": "node ./lib/index.js",
     "start": "tsc --watch",
     "dev": "webpack --watch"
   },
+  "bin": "./lib/index.js",
   "devDependencies": {
     "typescript": "^3.2.1"
   },

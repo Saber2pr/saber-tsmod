@@ -1,15 +1,13 @@
-# saber-ts-launch-browser-npm
+# saber-tsmod
 
-> it just a template for ts dev in browser and publish it to npm.
-
-> run ts in browser!
+> a cli for ts dev.
 
 > publish your ts module to npm!
 
 ## start
 
 ```bash
-git clone https://github.com/Saber2pr/saber-ts-launch-browser-npm.git
+git clone https://github.com/Saber2pr/saber-tsmod.git
 ```
 
 ```bash
@@ -18,14 +16,14 @@ npm install
 ```
 
 ```bash
-# start cli
-npm run tsmod
-
 # auto compile to commonjs
 npm start
 
 # auto compile to es5
 npm run dev
+
+# test cli
+npm run test
 
 ```
 
