@@ -10,6 +10,12 @@ npm install saber-tsmod -g
 
 ## Usage:
 
+1. init: init the project files.
+
+2. create <module> : create a new ts module and its test file.
+
+---
+
 ```bash
 # create workspace
 mkdir <projectFolder>
@@ -22,6 +28,8 @@ saber-tsmod init
 # create module and test file.
 saber-tsmod create <module>
 ```
+
+---
 
 ## start
 
@@ -39,6 +47,8 @@ npm run dev
 
 ```
 
+---
+
 ## develope and test
 
 > you should write ts in /src
@@ -48,6 +58,8 @@ npm run dev
 > you should make test in /src/test
 
 > export your core in /src/index.ts!
+
+---
 
 ## publish
 

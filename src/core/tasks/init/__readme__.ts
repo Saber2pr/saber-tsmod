@@ -1,8 +1,8 @@
 /*
  * @Author: AK-12
  * @Date: 2019-01-12 17:18:56
- * @Last Modified by:   AK-12
- * @Last Modified time: 2019-01-12 17:18:56
+ * @Last Modified by: AK-12
+ * @Last Modified time: 2019-01-12 23:00:00
  */
 import { File } from 'saber-node'
 import { IPackageInfor } from '../../saber-tsmod'
@@ -28,6 +28,8 @@ export async function initReadMe(packageInfor: IPackageInfor) {
   git clone ${repository}
   \`\`\`
   
+  ---
+
   ## start
   
   \`\`\`bash
@@ -45,6 +47,8 @@ export async function initReadMe(packageInfor: IPackageInfor) {
   \`\`\`
 
   > Author: ${author}
+
+  ---
   
   ## develope and test
   
@@ -55,6 +59,8 @@ export async function initReadMe(packageInfor: IPackageInfor) {
   > you should make test in /src/test
   
   > export your core in /src/index.ts!
+
+  ---
   
   ## publish
   
