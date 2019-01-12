@@ -12,7 +12,7 @@ npm install saber-tsmod -g
 
 1. init: init the project files.
 
-2. create <module> : create a new ts module and its test file.
+2. create `<module>`: create a new ts module file and its test file.
 
 ---
 
@@ -24,6 +24,9 @@ cd <projectFolder>
 
 # init project.
 saber-tsmod init
+
+# install dependencies
+npm install
 
 # create module and test file.
 saber-tsmod create <module>
@@ -46,6 +49,8 @@ npm start
 npm run dev
 
 ```
+
+## Author: saber2pr(AK-12)
 
 ---
 
