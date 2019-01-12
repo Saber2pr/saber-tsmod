@@ -6,6 +6,7 @@
  */
 
 // change root value to test.
+// temp:(export const root = `${process.cwd()}/src`)
 // for exam: root = `./test/src`
 
 export const root = `${process.cwd()}/src`
