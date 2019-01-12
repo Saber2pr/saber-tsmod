@@ -14,7 +14,10 @@ export async function initTsConfig() {
      \"module\": \"commonjs\",
      \"declaration\": true,
      \"outDir\": \"./lib\",
-     \"esModuleInterop\": true
+     \"esModuleInterop\": true,
+     \"lib\": [
+      \"es2015\"
+    ]
    },
    \"include\": [\"src\"],
    \"exclude\": [\"node_modules\"]
