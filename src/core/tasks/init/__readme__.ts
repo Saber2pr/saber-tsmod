@@ -36,12 +36,6 @@ export async function initReadMe(packageInfor: IPackageInfor) {
   \`\`\`
   
   \`\`\`bash
-  # init package
-  npm run init
-  
-  # create new module file
-  npm run new-mod
-  
   # auto compile to commonjs
   npm start
   
