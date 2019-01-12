@@ -4,8 +4,6 @@
 
 > publish your ts module to npm!
 
-## start
-
 ```bash
 npm install saber-tsmod -g
 ```
@@ -19,6 +17,8 @@ saber-tsmod init
 # create module and test file.
 saber-tsmod create <module>
 ```
+
+## start
 
 ```bash
 # install the typescript and webpack.
