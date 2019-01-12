@@ -11,6 +11,11 @@ npm install saber-tsmod -g
 ## Usage:
 
 ```bash
+# create workspace
+mkdir <projectFolder>
+
+cd <projectFolder>
+
 # init project.
 saber-tsmod init
 
