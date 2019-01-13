@@ -34,7 +34,7 @@ saber-tsmod create <module>
 # tsconfig.json
 saber-tsmod config ts
 # webpack.config.json
-saber-tsmod config ts
+saber-tsmod config webpack
 
 ```
 
