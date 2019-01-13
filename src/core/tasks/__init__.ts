@@ -2,7 +2,7 @@
  * @Author: AK-12
  * @Date: 2019-01-12 17:02:13
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-12 17:24:16
+ * @Last Modified time: 2019-01-13 14:02:46
  */
 import { Terminal } from 'saber-node'
 import { initPackageJson } from './init/__package__'
@@ -10,6 +10,15 @@ import { initHtml } from './init/__html__'
 import { initReadMe } from './init/__readme__'
 import { initTsConfig } from './init/__tsconfig__'
 import { initWebpackConfig } from './init/__webpackConfig__'
+/**
+ * @interface IPackageInfor
+ */
+export interface IPackageInfor {
+  name: string
+  description: string
+  repository: string
+  author: string
+}
 /**
  * init
  *

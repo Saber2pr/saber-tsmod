@@ -2,10 +2,10 @@
  * @Author: AK-12
  * @Date: 2019-01-12 17:18:56
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-13 13:15:46
+ * @Last Modified time: 2019-01-13 14:03:10
  */
 import { File } from 'saber-node'
-import { IPackageInfor } from '../../../config/path.config'
+import { IPackageInfor } from '../__init__'
 /**
  * initReadMe
  *

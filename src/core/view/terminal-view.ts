@@ -4,7 +4,7 @@
  * @Last Modified by:   AK-12
  * @Last Modified time: 2019-01-13 13:14:13
  */
-import { packageConfig } from '../../config/path.config'
+const version = '1.1.3'
 /**
  * Options
  */
@@ -44,7 +44,7 @@ export namespace TerminalLog {
   export const Hello = `
   ______________________________...
   |
-  | += saber-tsmod v${packageConfig.version} =+
+  | += saber-tsmod v${version} =+
   | Usage:
   | 
   | ${options.init}
