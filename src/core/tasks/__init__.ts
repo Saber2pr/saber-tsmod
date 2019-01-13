@@ -53,8 +53,8 @@ export async function init() {
   await init_ReadMe(packageInfor)
   await initTs_Config()
 
-  const isInit_webpack = await Terminal.getUserInput('config webpack?(Y/N): ')
-  if (isInit_webpack === 'Y') {
+  const isInit_webpack = await Terminal.getUserInput('config webpack?(y/n): ')
+  if (isInit_webpack === 'y') {
     await init_WebpackConfig()
   }
 

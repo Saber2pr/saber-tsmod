@@ -35,7 +35,7 @@ module.exports = {
 
   const packageJson_path = `${process.cwd()}/package.json`
   const res: any = await File.read(packageJson_path)
-  const packageJson: IPackageInfor = res as IPackageInfor
+  const packageJson: IPackageInfor = JSON.parse(res) as IPackageInfor
 
   packageJson.scripts.dev = 'webpack --watch'
   packageJson.devDependencies.webpack = '^3.12.0'

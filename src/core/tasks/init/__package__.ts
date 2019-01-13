@@ -25,12 +25,10 @@ export async function init_PackageJson(packageInfor: IPackageInfor) {
   \"main\": \"./lib/index.js\",
   \"scripts\": {
     \"start\": \"tsc --watch\",
-    \"dev\": \"webpack --watch\",
     \"test\": \"node ./lib/test/test.js\"
   },
   \"devDependencies\": {
-    \"typescript\": \"^3.2.1\",
-    \"webpack\": \"^3.12.0\"
+    \"typescript\": \"^3.2.1\"
   }
 }`
 
