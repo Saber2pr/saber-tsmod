@@ -10,22 +10,6 @@ import { initTs_Config } from './tasks/init/__tsconfig__'
 import { init_WebpackConfig } from './tasks/init/__webpackConfig__'
 import { Options, TerminalLog } from './view/terminal-view'
 import { init_gitignore } from './tasks/init/__gitignore__'
-
-// main
-export async function main() {
-  const params = process.argv.splice(2)
-  if (params.length > 0) {
-    if (params[0] === Options.Params.init) {
-      init()
-    } else if (params[0] === Options.Params.create) {
-      main_create(params[1])
-    } else if (params[0] === Options.Params.config) {
-      main_config(params[1])
-    }
-  } else {
-    console.log(TerminalLog.Hello)
-  }
-}
 /**
  * main_create
  *
@@ -61,6 +45,21 @@ async function main_config(param: string) {
     default:
       console.log(TerminalLog.Help.config)
       break
+  }
+}
+// main
+export async function main() {
+  const params = process.argv.splice(2)
+  if (params.length > 0) {
+    if (params[0] === Options.Params.init) {
+      init()
+    } else if (params[0] === Options.Params.create) {
+      main_create(params[1])
+    } else if (params[0] === Options.Params.config) {
+      main_config(params[1])
+    }
+  } else {
+    console.log(TerminalLog.Hello)
   }
 }
 main()

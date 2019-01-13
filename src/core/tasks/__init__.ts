@@ -2,7 +2,7 @@
  * @Author: AK-12
  * @Date: 2019-01-12 17:02:13
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-13 14:15:26
+ * @Last Modified time: 2019-01-13 14:41:58
  */
 import { Terminal } from 'saber-node'
 import { init_PackageJson } from './init/__package__'
@@ -31,6 +31,10 @@ export async function init() {
   const description = await Terminal.getUserInput('description: ')
   const repository = await Terminal.getUserInput('repository(git): ')
   const author = await Terminal.getUserInput('author: ')
+  if (!(name && description && repository && author)) {
+    console.log(`--- init failed ---`)
+    return
+  }
   let packageInfor = {
     name: name,
     description: description,
