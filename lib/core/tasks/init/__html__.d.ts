@@ -1,4 +1,4 @@
-import { IPackageInfor } from '../../saber-tsmod';
+import { IPackageInfor } from '../../../config/path.config';
 /**
  * initHtml
  *

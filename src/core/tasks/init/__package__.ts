@@ -2,10 +2,10 @@
  * @Author: AK-12
  * @Date: 2019-01-12 17:15:41
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-12 17:17:18
+ * @Last Modified time: 2019-01-13 13:15:58
  */
 import { File } from 'saber-node'
-import { IPackageInfor } from '../../saber-tsmod'
+import { IPackageInfor } from '../../../config/path.config'
 
 export async function initPackageJson(packageInfor: IPackageInfor) {
   const { name, description, repository, author } = packageInfor

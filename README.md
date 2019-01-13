@@ -14,6 +14,8 @@ npm install saber-tsmod -g
 
 2. create `<module>`: create a new ts module file and its test file.
 
+3. config `<option>`: create config file of typescript or webpack.
+
 ---
 
 ```bash
@@ -25,11 +27,15 @@ cd <projectFolder>
 # init project.
 saber-tsmod init
 
-# install dependencies
-npm install
-
 # create module and test file.
 saber-tsmod create <module>
+
+# create config file
+# tsconfig.json
+saber-tsmod config ts
+# webpack.config.json
+saber-tsmod config ts
+
 ```
 
 ---
