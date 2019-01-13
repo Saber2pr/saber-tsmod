@@ -5,6 +5,10 @@
  * @Last Modified time: 2019-01-13 14:17:59
  */
 import { File } from 'saber-node'
+import { IPackageInfor } from '../__init__'
+/** packageJson **/
+const packageJson_path = `${process.cwd()}/package.json`
+const packageJson: IPackageInfor = require(packageJson_path)
 /**
  * initWebpackConfig
  *
@@ -31,5 +35,10 @@ module.exports = {
 };`
 
   await File.createFile(webpackConfig, webpackConfigContent)
+
+  packageJson.scripts.dev = 'webpack --watch'
+  packageJson.devDependencies.webpack = '^3.12.0'
+  await File.createFile(packageJson_path, JSON.stringify(packageJson, null, 2))
+
   return
 }

@@ -19,6 +19,12 @@ export interface IPackageInfor {
   description: string
   repository: string
   author: string
+  scripts?: {
+    dev: 'webpack --watch'
+  }
+  devDependencies?: {
+    webpack: '^3.12.0'
+  }
 }
 /**
  * init
@@ -46,7 +52,12 @@ export async function init() {
   await init_Html(packageInfor)
   await init_ReadMe(packageInfor)
   await initTs_Config()
-  await init_WebpackConfig()
+
+  const isInit_webpack = await Terminal.getUserInput('config webpack?(Y/N): ')
+  if (isInit_webpack === 'Y') {
+    await init_WebpackConfig()
+  }
+
   await init_gitignore()
 
   console.log(`--- init successfully ---`)

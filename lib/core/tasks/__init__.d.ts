@@ -6,6 +6,12 @@ export interface IPackageInfor {
     description: string;
     repository: string;
     author: string;
+    scripts?: {
+        dev: 'webpack --watch';
+    };
+    devDependencies?: {
+        webpack: '^3.12.0';
+    };
 }
 /**
  * init
