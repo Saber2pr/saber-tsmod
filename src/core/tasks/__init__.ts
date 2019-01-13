@@ -31,7 +31,7 @@ export async function init() {
   const description = await Terminal.getUserInput('description: ')
   const repository = await Terminal.getUserInput('repository(git): ')
   const author = await Terminal.getUserInput('author: ')
-  if (!(name && description && repository && author)) {
+  if (!name) {
     console.log(`--- init failed ---`)
     return
   }
@@ -49,5 +49,6 @@ export async function init() {
   await init_WebpackConfig()
   await init_gitignore()
 
+  console.log(`--- init successfully ---`)
   return
 }
