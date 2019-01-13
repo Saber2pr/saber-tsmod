@@ -6,9 +6,6 @@
  */
 import { File } from 'saber-node'
 import { IPackageInfor } from '../__init__'
-/** packageJson **/
-const packageJson_path = `${process.cwd()}/package.json`
-const packageJson: IPackageInfor = require(packageJson_path)
 /**
  * initWebpackConfig
  *
@@ -35,6 +32,10 @@ module.exports = {
 };`
 
   await File.createFile(webpackConfig, webpackConfigContent)
+
+  const packageJson_path = `${process.cwd()}/package.json`
+  const res: any = await File.read(packageJson_path)
+  const packageJson: IPackageInfor = res as IPackageInfor
 
   packageJson.scripts.dev = 'webpack --watch'
   packageJson.devDependencies.webpack = '^3.12.0'
