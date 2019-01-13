@@ -2,10 +2,10 @@
  * @Author: AK-12
  * @Date: 2019-01-12 17:20:24
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-13 14:17:59
+ * @Last Modified time: 2019-01-13 23:13:58
  */
 import { File } from 'saber-node'
-import { IPackageInfor } from '../__init__'
+import { reloadPackage } from '../../utils/reload'
 /**
  * initWebpackConfig
  *
@@ -33,13 +33,11 @@ module.exports = {
 
   await File.createFile(webpackConfig, webpackConfigContent)
 
-  const packageJson_path = `${process.cwd()}/package.json`
-  const res: any = await File.read(packageJson_path)
-  const packageJson: IPackageInfor = JSON.parse(res) as IPackageInfor
-
-  packageJson.scripts.dev = 'webpack --watch'
-  packageJson.devDependencies.webpack = '^3.12.0'
-  await File.createFile(packageJson_path, JSON.stringify(packageJson, null, 2))
+  await reloadPackage(packageData => {
+    packageData.scripts.dev = 'webpack --watch'
+    packageData.devDependencies.webpack = '^3.12.0'
+    return packageData
+  })
 
   return
 }

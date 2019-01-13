@@ -7,9 +7,11 @@ export interface IPackageInfor {
     repository: string;
     author: string;
     scripts?: {
+        start: 'tsc --watch';
         dev: 'webpack --watch';
     };
     devDependencies?: {
+        typescript: '^3.2.1';
         webpack: '^3.12.0';
     };
 }

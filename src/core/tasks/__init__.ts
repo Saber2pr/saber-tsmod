@@ -2,7 +2,7 @@
  * @Author: AK-12
  * @Date: 2019-01-12 17:02:13
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-13 14:41:58
+ * @Last Modified time: 2019-01-13 23:16:09
  */
 import { Terminal } from 'saber-node'
 import { init_PackageJson } from './init/__package__'
@@ -20,9 +20,11 @@ export interface IPackageInfor {
   repository: string
   author: string
   scripts?: {
+    start: 'tsc --watch'
     dev: 'webpack --watch'
   }
   devDependencies?: {
+    typescript: '^3.2.1'
     webpack: '^3.12.0'
   }
 }
