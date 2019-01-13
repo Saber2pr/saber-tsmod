@@ -5,4 +5,4 @@ import { IPackageInfor } from '../__init__';
  * @export
  * @param {IPackageInfor} packageInfor
  */
-export declare function initReadMe(packageInfor: IPackageInfor): Promise<void>;
+export declare function init_ReadMe(packageInfor: IPackageInfor): Promise<void>;

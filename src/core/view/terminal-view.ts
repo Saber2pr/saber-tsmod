@@ -1,10 +1,10 @@
 /*
  * @Author: AK-12
  * @Date: 2019-01-13 13:14:13
- * @Last Modified by:   AK-12
- * @Last Modified time: 2019-01-13 13:14:13
+ * @Last Modified by: AK-12
+ * @Last Modified time: 2019-01-13 14:23:53
  */
-const version = '1.1.3'
+const version = '1.1.4'
 /**
  * Options
  */
@@ -27,7 +27,8 @@ export namespace Options {
    */
   export enum ConfigItems {
     ts = 'ts',
-    webpack = 'webpack'
+    webpack = 'webpack',
+    git = 'git'
   }
 }
 /**
@@ -37,9 +38,10 @@ export namespace TerminalLog {
   const options = {
     init: 'init: init the project files.',
     create: 'create <module> : create a new ts module and its test file.',
-    config: "config <option> : option is 'ts' , or 'webpack'.",
+    config: "config <option> : option is 'ts' , 'webpack', or 'git'.",
     config_ts: `${Options.ConfigItems.ts} : create tsconfig.json`,
-    config_webpack: `${Options.ConfigItems.webpack} : create webpack.config.js`
+    config_webpack: `${Options.ConfigItems.webpack} : create webpack.config.js`,
+    config_git: `${Options.ConfigItems.git}: create .gitignore`
   }
   export const Hello = `
   ______________________________...
@@ -64,10 +66,11 @@ export namespace TerminalLog {
     `
     export const config = `
       ______________________________...
-      |choose a option
+      |choose a option:
       |
       |1. ${options.config_ts}
       |2. ${options.config_webpack}
+      |3. ${options.config_git}
       |______________________________...
     `
   }

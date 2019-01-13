@@ -2,14 +2,15 @@
  * @Author: AK-12
  * @Date: 2019-01-12 17:02:13
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-13 14:02:46
+ * @Last Modified time: 2019-01-13 14:15:26
  */
 import { Terminal } from 'saber-node'
-import { initPackageJson } from './init/__package__'
-import { initHtml } from './init/__html__'
-import { initReadMe } from './init/__readme__'
-import { initTsConfig } from './init/__tsconfig__'
-import { initWebpackConfig } from './init/__webpackConfig__'
+import { init_PackageJson } from './init/__package__'
+import { init_Html } from './init/__html__'
+import { init_ReadMe } from './init/__readme__'
+import { initTs_Config } from './init/__tsconfig__'
+import { init_WebpackConfig } from './init/__webpackConfig__'
+import { init_gitignore } from './init/__gitignore__'
 /**
  * @interface IPackageInfor
  */
@@ -37,11 +38,12 @@ export async function init() {
     author: author
   }
   // resolve
-  await initPackageJson(packageInfor)
-  await initHtml(packageInfor)
-  await initReadMe(packageInfor)
-  await initTsConfig()
-  await initWebpackConfig()
+  await init_PackageJson(packageInfor)
+  await init_Html(packageInfor)
+  await init_ReadMe(packageInfor)
+  await initTs_Config()
+  await init_WebpackConfig()
+  await init_gitignore()
 
   return
 }

@@ -1,7 +1,7 @@
 import { IPackageInfor } from '../__init__';
 /**
- * initHtml
+ * init_Html
  *
  * @param {IPackageInfor} packageInfor
  */
-export declare function initHtml(packageInfor: IPackageInfor): Promise<void>;
+export declare function init_Html(packageInfor: IPackageInfor): Promise<void>;

@@ -1,1 +1,1 @@
-export declare function initTsConfig(): Promise<void>;
+export declare function initTs_Config(): Promise<void>;

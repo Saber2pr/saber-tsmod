@@ -1,15 +1,15 @@
 /*
  * @Author: AK-12
  * @Date: 2019-01-12 17:19:45
- * @Last Modified by:   AK-12
- * @Last Modified time: 2019-01-12 17:19:45
+ * @Last Modified by: AK-12
+ * @Last Modified time: 2019-01-13 14:17:22
  */
 import { File } from 'saber-node'
 
-export async function initTsConfig() {
+export async function initTs_Config() {
   const tsconfig = `${process.cwd()}/tsconfig.json`
   const tsconfigContent = `{
-   \"compilerOptions\": {
+  \"compilerOptions\": {
      \"target\": \"es5\",
      \"module\": \"commonjs\",
      \"declaration\": true,
@@ -19,10 +19,10 @@ export async function initTsConfig() {
       \"dom\",
       \"es2015\"
     ]
-   },
-   \"include\": [\"src\"],
-   \"exclude\": [\"node_modules\"]
- }`
+  },
+  \"include\": [\"src\"],
+  \"exclude\": [\"node_modules\"]
+}`
 
   await File.createFile(tsconfig, tsconfigContent)
   return

@@ -2,13 +2,14 @@
  * @Author: AK-12
  * @Date: 2019-01-12 13:37:33
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-13 13:15:17
+ * @Last Modified time: 2019-01-13 14:20:46
  */
 import { createModuleFile } from './tasks/__tsmod__'
 import { init } from './tasks/__init__'
-import { initTsConfig } from './tasks/init/__tsconfig__'
-import { initWebpackConfig } from './tasks/init/__webpackConfig__'
+import { initTs_Config } from './tasks/init/__tsconfig__'
+import { init_WebpackConfig } from './tasks/init/__webpackConfig__'
 import { Options, TerminalLog } from './view/terminal-view'
+import { init_gitignore } from './tasks/init/__gitignore__'
 
 // main
 export async function main() {
@@ -46,11 +47,15 @@ async function main_create(param: string) {
 async function main_config(param: string) {
   switch (param as Options.ConfigItems) {
     case Options.ConfigItems.ts:
-      await initTsConfig()
+      await initTs_Config()
       break
 
     case Options.ConfigItems.webpack:
-      await initWebpackConfig()
+      await init_WebpackConfig()
+      break
+
+    case Options.ConfigItems.git:
+      await init_gitignore()
       break
 
     default:

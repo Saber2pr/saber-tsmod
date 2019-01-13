@@ -3,4 +3,4 @@
  *
  * @export
  */
-export declare function initWebpackConfig(): Promise<void>;
+export declare function init_WebpackConfig(): Promise<void>;
