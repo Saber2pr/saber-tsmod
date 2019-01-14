@@ -36,14 +36,15 @@ export interface IPackageInfor {
 export async function init() {
   // Terminal res
   const name = await Terminal.getUserInput('Package name: ')
-  const description = await Terminal.getUserInput('description: ')
-  const repository = await Terminal.getUserInput('repository(git): ')
-  const author = await Terminal.getUserInput('author: ')
   if (!name) {
     Terminal.Print.error('--- init failed ---')
     Terminal.Print.error('<Package name> cannot be null!')
     return
   }
+  const description = await Terminal.getUserInput('description: ')
+  const repository = await Terminal.getUserInput('repository(git): ')
+  const author = await Terminal.getUserInput('author: ')
+
   let packageInfor = {
     name: name,
     description: description,
