@@ -5,4 +5,4 @@ import { IPackageInfor } from '../tasks/__init__';
  * @export
  * @param {(packageData: IPackageInfor) => IPackageInfor} callback
  */
-export declare const reloadPackage: (callback: (packageData: IPackageInfor) => IPackageInfor) => Promise<void>;
+export declare const reloadPackage: (callback: (fileData: IPackageInfor) => IPackageInfor) => Promise<void>;

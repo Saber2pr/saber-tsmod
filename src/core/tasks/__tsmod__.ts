@@ -37,7 +37,7 @@ test_${rename}()\n\n`
   if (!(await Path.isExist(test_entry))) {
     await File.createFile(test_entry, module_test)
   } else {
-    await File.pushFile(test_entry, module_test)
+    await File.push(test_entry, module_test)
   }
   // create export
   const export_entry = `${root}/index.ts`

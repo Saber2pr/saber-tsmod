@@ -12,6 +12,6 @@ import { File } from 'saber-node'
  * @export
  * @param {(packageData: IPackageInfor) => IPackageInfor} callback
  */
-export const reloadPackage = File.edit<IPackageInfor>(
+export const reloadPackage = File.Json.pipe<IPackageInfor>(
   `${process.cwd()}/package.json`
 )
