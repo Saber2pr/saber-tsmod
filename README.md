@@ -1,5 +1,9 @@
 # saber-tsmod
 
+![types](https://img.shields.io/npm/types/saber-tsmod.svg)
+![version](https://img.shields.io/npm/v/saber-tsmod.svg)
+![license](https://img.shields.io/npm/l/saber-tsmod.svg)
+
 > a cli for ts dev.
 
 > publish your ts module to npm!
