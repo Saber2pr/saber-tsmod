@@ -2,7 +2,8 @@
 
 [![types](https://img.shields.io/npm/types/saber-tsmod.svg)](https://github.com/Microsoft/TypeScript)
 [![version](https://img.shields.io/npm/v/saber-tsmod.svg)](https://www.npmjs.com/package/saber-tsmod)
-[![license](https://img.shields.io/npm/l/saber-tsmod.svg)](https://github.com/Saber2pr/License)
+[![license](https://img.shields.io/npm/l/saber-tsmod.svg)](https://github.com/Saber2pr/saber-tsmod/blob/master/LICENSE)
+[![github](https://img.shields.io/badge/github-saber2pr-blue.svg)](https://github.com/Saber2pr/saber-tsmod)
 
 > a cli for ts dev.
 
