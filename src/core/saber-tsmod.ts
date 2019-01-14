@@ -2,7 +2,7 @@
  * @Author: AK-12
  * @Date: 2019-01-12 13:37:33
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-13 14:20:46
+ * @Last Modified time: 2019-01-14 22:27:08
  */
 import { createModuleFile } from './tasks/__tsmod__'
 import { init } from './tasks/__init__'
@@ -10,6 +10,7 @@ import { initTs_Config } from './tasks/init/__tsconfig__'
 import { init_WebpackConfig } from './tasks/init/__webpackConfig__'
 import { Options, TerminalLog } from './view/terminal-view'
 import { init_gitignore } from './tasks/init/__gitignore__'
+import { Terminal } from 'saber-node'
 /**
  * main_create
  *
@@ -18,9 +19,9 @@ import { init_gitignore } from './tasks/init/__gitignore__'
 async function main_create(param: string) {
   if (typeof param !== 'undefined') {
     const res = await createModuleFile(param)
-    console.log(TerminalLog.Status.modulePath(res))
+    Terminal.Print.success(TerminalLog.Status.modulePath(res))
   } else {
-    console.log(TerminalLog.Help.create)
+    Terminal.Print.tips(TerminalLog.Help.create)
   }
 }
 /**
@@ -43,12 +44,14 @@ async function main_config(param: string) {
       break
 
     default:
-      console.log(TerminalLog.Help.config)
+      Terminal.Print.tips(TerminalLog.Help.config)
       break
   }
 }
 // main
 export async function main() {
+  process.on('exit', () => console.log('\n'))
+
   const params = process.argv.splice(2)
   if (params.length > 0) {
     if (params[0] === Options.Params.init) {
@@ -59,7 +62,7 @@ export async function main() {
       main_config(params[1])
     }
   } else {
-    console.log(TerminalLog.Hello)
+    Terminal.Print.tips(TerminalLog.Hello)
   }
 }
 main()

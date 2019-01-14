@@ -2,7 +2,7 @@
  * @Author: AK-12
  * @Date: 2019-01-12 17:02:13
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-13 23:16:09
+ * @Last Modified time: 2019-01-14 22:27:19
  */
 import { Terminal } from 'saber-node'
 import { init_PackageJson } from './init/__package__'
@@ -40,7 +40,8 @@ export async function init() {
   const repository = await Terminal.getUserInput('repository(git): ')
   const author = await Terminal.getUserInput('author: ')
   if (!name) {
-    console.log(`--- init failed ---`)
+    Terminal.Print.error('--- init failed ---')
+    Terminal.Print.error('<Package name> cannot be null!')
     return
   }
   let packageInfor = {
@@ -62,6 +63,6 @@ export async function init() {
 
   await init_gitignore()
 
-  console.log(`--- init successfully ---`)
+  Terminal.Print.success('--- init successfully ---')
   return
 }
