@@ -39,11 +39,15 @@ test_${rename}()\n\n`
   } else {
     await File.push(test_entry, module_test)
   }
+
   // create export
   const export_entry = `${root}/index.ts`
+  const export_entry_content = `export * from './core/${name}'\n`
+
   if (!(await Path.isExist(export_entry))) {
-    const export_entry_content = `export * from './core/${name}'`
     await File.createFile(export_entry, export_entry_content)
+  } else {
+    await File.push(export_entry, export_entry_content)
   }
 
   return moduleFilePath
