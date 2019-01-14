@@ -1,8 +1,8 @@
 # saber-tsmod
 
-![types](https://img.shields.io/npm/types/saber-tsmod.svg)
-![version](https://img.shields.io/npm/v/saber-tsmod.svg)
-![license](https://img.shields.io/npm/l/saber-tsmod.svg)
+[![types](https://img.shields.io/npm/types/saber-tsmod.svg)](https://github.com/Microsoft/TypeScript)
+[![version](https://img.shields.io/npm/v/saber-tsmod.svg)](https://www.npmjs.com/package/saber-tsmod)
+[![license](https://img.shields.io/npm/l/saber-tsmod.svg)](https://github.com/Saber2pr/License)
 
 > a cli for ts dev.
 
