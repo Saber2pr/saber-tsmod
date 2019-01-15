@@ -19,7 +19,7 @@ export async function createModuleFile(name: string) {
   const rename = name.replace(/-/g, '_')
 
   const moduleFilePath = `${path_core}/${name}.ts`
-  const moduleFileContent = module(rename, name).core
+  const moduleFileContent = module(name, rename).core
   if (await Path.isExist(moduleFilePath)) {
     Fail.Task.createFail(name)
     return
@@ -28,7 +28,7 @@ export async function createModuleFile(name: string) {
   await File.createFile(moduleFilePath, moduleFileContent)
 
   const moduleTest = `${path_test}/test_${rename}.ts`
-  const moduleTestContent = module(rename, name).test
+  const moduleTestContent = module(name, rename).test
   // create module test file
   await File.createFile(moduleTest, moduleTestContent)
 

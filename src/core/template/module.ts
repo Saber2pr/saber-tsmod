@@ -7,7 +7,7 @@
 export const module = (name: string, variable: string) => ({
   core: `export let ${variable} = '${name}'`,
   test: `import { ${variable} } from '../core/${name}'\n
-  export function test_${variable}(){
-    console.log(${variable})
-  }`
+export function test_${variable}(){
+  console.log(${variable})
+}`
 })
