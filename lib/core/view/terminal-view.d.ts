@@ -10,7 +10,8 @@ export declare namespace Options {
     enum Params {
         init = "init",
         create = "create",
-        config = "config"
+        config = "config",
+        egg = "saber2pr"
     }
     /**
      * ConfigItems

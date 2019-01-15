@@ -1,8 +1,8 @@
 /*
  * @Author: AK-12
  * @Date: 2019-01-15 13:16:52
- * @Last Modified by:   AK-12
- * @Last Modified time: 2019-01-15 13:16:52
+ * @Last Modified by: AK-12
+ * @Last Modified time: 2019-01-15 13:58:46
  */
 import { IPackageInfor } from '../tasks/__init__'
 
@@ -18,10 +18,8 @@ export const packageJson = (packageInfor: IPackageInfor) => `{
   \"license\": \"ISC\",
   \"main\": \"./lib/index.js\",
   \"scripts\": {
-    \"start\": \"tsc --watch\",
     \"test\": \"node ./lib/test/test.js\"
   },
   \"devDependencies\": {
-    \"typescript\": \"^3.2.1\"
   }
 }`

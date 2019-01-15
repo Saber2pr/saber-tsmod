@@ -2,7 +2,7 @@
  * @Author: AK-12
  * @Date: 2019-01-13 13:14:13
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-14 22:23:34
+ * @Last Modified time: 2019-01-15 15:20:02
  */
 const version = '1.2.9'
 /**
@@ -17,7 +17,8 @@ export namespace Options {
   export enum Params {
     init = 'init',
     create = 'create',
-    config = 'config'
+    config = 'config',
+    egg = 'saber2pr'
   }
   /**
    * ConfigItems

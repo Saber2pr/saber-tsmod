@@ -2,17 +2,16 @@
  * @Author: AK-12
  * @Date: 2019-01-12 17:02:13
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-15 13:33:51
+ * @Last Modified time: 2019-01-15 14:44:10
  */
-import { Terminal, Path } from 'saber-node'
+import { Terminal } from 'saber-node'
 import { init_PackageJson } from './init/__package__'
 import { init_Html } from './init/__html__'
 import { init_ReadMe } from './init/__readme__'
-import { initTs_Config } from './init/__tsconfig__'
+import { init_Tsconfig } from './init/__tsconfig__'
 import { init_WebpackConfig } from './init/__webpackConfig__'
 import { init_gitignore } from './init/__gitignore__'
-import { Fail, Success } from '../utils/print'
-import { path_packageJson } from '../../config/path.config'
+import { Fail } from '../utils/print'
 /**
  * @interface IPackageInfor
  */
@@ -36,9 +35,6 @@ export interface IPackageInfor {
  * @export
  */
 export async function init() {
-  if (await Path.isExist(path_packageJson)) {
-    Fail.Task.initFail('package.json is exist!')
-  }
   // Terminal res
   const name = await Terminal.getUserInput('Package name: ')
   if (!name) {
@@ -58,7 +54,7 @@ export async function init() {
   // resolve
   await init_PackageJson(packageInfor)
   await init_ReadMe(packageInfor)
-  await initTs_Config()
+  await init_Tsconfig()
 
   const isInit_webpack = await Terminal.getUserInput('config webpack?(y/n): ')
   if (isInit_webpack === 'y') {
@@ -68,6 +64,5 @@ export async function init() {
 
   await init_gitignore()
 
-  Success.Task.initSuccessfully()
   return
 }

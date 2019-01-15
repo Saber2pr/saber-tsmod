@@ -15,12 +15,14 @@
     "file"
   ],
   "scripts": {
-    "test": "node ./lib/index.js",
-    "start": "tsc --watch"
+    "start": "tsc --watch",
+    "dev": "webpack --watch",
+    "test": "node ./lib/index.js '_test'"
   },
   "bin": "./lib/index.js",
   "devDependencies": {
-    "typescript": "^3.2.1"
+    "typescript": "^3.2.1",
+    "webpack": "^3.12.0"
   },
   "dependencies": {
     "saber-node": "^1.1.2"

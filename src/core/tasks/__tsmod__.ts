@@ -2,10 +2,12 @@
  * @Author: AK-12
  * @Date: 2019-01-12 17:23:40
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-12 22:32:40
+ * @Last Modified time: 2019-01-15 14:34:56
  */
 import { path_core, path_root, path_test } from '../../config/path.config'
 import { File, Path } from 'saber-node'
+import { module } from '../template/module'
+import { Fail, Success } from '../utils/print'
 /**
  * createModuleFile
  *
@@ -17,15 +19,16 @@ export async function createModuleFile(name: string) {
   const rename = name.replace(/-/g, '_')
 
   const moduleFilePath = `${path_core}/${name}.ts`
-  const moduleFileContent = `export let ${rename} = '${name}'`
+  const moduleFileContent = module(rename, name).core
+  if (await Path.isExist(moduleFilePath)) {
+    Fail.Task.createFail(name)
+    return
+  }
   // create module file
   await File.createFile(moduleFilePath, moduleFileContent)
 
   const moduleTest = `${path_test}/test_${rename}.ts`
-  const moduleTestContent = `import { ${rename} } from '../core/${name}'\n
-export function test_${rename}(){
-  console.log(${rename})
-}`
+  const moduleTestContent = module(rename, name).test
   // create module test file
   await File.createFile(moduleTest, moduleTestContent)
 
@@ -50,5 +53,5 @@ test_${rename}()\n\n`
     await File.push(export_entry, export_entry_content)
   }
 
-  return moduleFilePath
+  Success.Task.createSuccessfully(moduleFilePath)
 }

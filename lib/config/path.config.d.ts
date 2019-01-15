@@ -1,4 +1,3 @@
-export declare const ROOT: string;
 export declare const path_root: string;
 export declare const path_core: string;
 export declare const path_test: string;

@@ -5,4 +5,4 @@
  * @param {string} name
  * @returns
  */
-export declare function createModuleFile(name: string): Promise<string>;
+export declare function createModuleFile(name: string): Promise<void>;

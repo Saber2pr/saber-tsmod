@@ -2,15 +2,16 @@
  * @Author: AK-12
  * @Date: 2019-01-12 13:37:33
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-14 22:27:08
+ * @Last Modified time: 2019-01-15 15:33:24
  */
 import { createModuleFile } from './tasks/__tsmod__'
 import { init } from './tasks/__init__'
-import { initTs_Config } from './tasks/init/__tsconfig__'
+import { init_Tsconfig } from './tasks/init/__tsconfig__'
 import { init_WebpackConfig } from './tasks/init/__webpackConfig__'
 import { Options, TerminalLog } from './view/terminal-view'
 import { init_gitignore } from './tasks/init/__gitignore__'
 import { Terminal } from 'saber-node'
+import { egg } from './template/egg'
 /**
  * main_create
  *
@@ -18,8 +19,7 @@ import { Terminal } from 'saber-node'
  */
 async function main_create(param: string) {
   if (typeof param !== 'undefined') {
-    const res = await createModuleFile(param)
-    Terminal.Print.success(TerminalLog.Status.modulePath(res))
+    await createModuleFile(param)
   } else {
     Terminal.Print.tips(TerminalLog.Help.create)
   }
@@ -32,7 +32,7 @@ async function main_create(param: string) {
 async function main_config(param: string) {
   switch (param as Options.ConfigItems) {
     case Options.ConfigItems.ts:
-      await initTs_Config()
+      await init_Tsconfig()
       break
 
     case Options.ConfigItems.webpack:
@@ -52,14 +52,20 @@ async function main_config(param: string) {
 export async function main() {
   process.on('exit', () => console.log('\n'))
 
-  const params = process.argv.splice(2)
+  const params =
+    process.argv[2] === '_test'
+      ? process.argv.splice(3)
+      : process.argv.splice(2)
+
   if (params.length > 0) {
     if (params[0] === Options.Params.init) {
-      init()
+      await init()
     } else if (params[0] === Options.Params.create) {
-      main_create(params[1])
+      await main_create(params[1])
     } else if (params[0] === Options.Params.config) {
-      main_config(params[1])
+      await main_config(params[1])
+    } else if (params[0] === Options.Params.egg) {
+      Terminal.Print.tips(egg)
     }
   } else {
     Terminal.Print.tips(TerminalLog.Hello)

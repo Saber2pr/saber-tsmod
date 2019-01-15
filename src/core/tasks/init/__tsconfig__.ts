@@ -2,16 +2,20 @@
  * @Author: AK-12
  * @Date: 2019-01-12 17:19:45
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-15 13:36:30
+ * @Last Modified time: 2019-01-15 14:51:48
  */
-import { File } from 'saber-node'
+import { File, Path } from 'saber-node'
 import { reloadPackage } from '../../utils/reload'
-import { Fail } from '../../utils/print'
+import { Fail, Success } from '../../utils/print'
 import { Rule } from '../../utils/rule'
 import { tsconfig } from '../../template/tsconfig'
 import { path_tsconfig } from '../../../config/path.config'
 
-export async function initTs_Config() {
+export async function init_Tsconfig() {
+  if (await Path.isExist(path_tsconfig)) {
+    Fail.Task.configFail('tsconfig.json is existed!')
+    return
+  }
   await File.createFile(path_tsconfig, tsconfig)
 
   await reloadPackage(packageData => {
@@ -27,6 +31,6 @@ export async function initTs_Config() {
     }
     return packageData
   })
-
+  Success.Task.configSuccessfully('tsconfig', path_tsconfig)
   return
 }
