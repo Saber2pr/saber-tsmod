@@ -1,3 +1,5 @@
+import { Terminal } from 'saber-node'
+
 /*
  * @Author: AK-12
  * @Date: 2019-01-11 22:20:22
@@ -7,6 +9,7 @@
 let ROOT
 if (process.argv[2] === '_test') {
   ROOT = `${process.cwd()}/__test__`
+  Terminal.Print.error('**** TEST MODE ****')
 } else {
   ROOT = process.cwd()
 }
