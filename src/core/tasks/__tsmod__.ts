@@ -4,7 +4,7 @@
  * @Last Modified by: AK-12
  * @Last Modified time: 2019-01-12 22:32:40
  */
-import { core, root, test } from '../../config/path.config'
+import { path_core, path_root, path_test } from '../../config/path.config'
 import { File, Path } from 'saber-node'
 /**
  * createModuleFile
@@ -16,12 +16,12 @@ import { File, Path } from 'saber-node'
 export async function createModuleFile(name: string) {
   const rename = name.replace(/-/g, '_')
 
-  const moduleFilePath = `${core}/${name}.ts`
+  const moduleFilePath = `${path_core}/${name}.ts`
   const moduleFileContent = `export let ${rename} = '${name}'`
   // create module file
   await File.createFile(moduleFilePath, moduleFileContent)
 
-  const moduleTest = `${test}/test_${rename}.ts`
+  const moduleTest = `${path_test}/test_${rename}.ts`
   const moduleTestContent = `import { ${rename} } from '../core/${name}'\n
 export function test_${rename}(){
   console.log(${rename})
@@ -30,7 +30,7 @@ export function test_${rename}(){
   await File.createFile(moduleTest, moduleTestContent)
 
   // create test entry
-  const test_entry = `${test}/test.ts`
+  const test_entry = `${path_test}/test.ts`
   const module_test = `import { test_${rename} } from '../test/test_${rename}'
 test_${rename}()\n\n`
 
@@ -41,7 +41,7 @@ test_${rename}()\n\n`
   }
 
   // create export
-  const export_entry = `${root}/index.ts`
+  const export_entry = `${path_root}/index.ts`
   const export_entry_content = `export * from './core/${name}'\n`
 
   if (!(await Path.isExist(export_entry))) {

@@ -2,15 +2,17 @@
  * @Author: AK-12
  * @Date: 2019-01-12 17:02:13
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-14 22:27:19
+ * @Last Modified time: 2019-01-15 13:33:51
  */
-import { Terminal } from 'saber-node'
+import { Terminal, Path } from 'saber-node'
 import { init_PackageJson } from './init/__package__'
 import { init_Html } from './init/__html__'
 import { init_ReadMe } from './init/__readme__'
 import { initTs_Config } from './init/__tsconfig__'
 import { init_WebpackConfig } from './init/__webpackConfig__'
 import { init_gitignore } from './init/__gitignore__'
+import { Fail, Success } from '../utils/print'
+import { path_packageJson } from '../../config/path.config'
 /**
  * @interface IPackageInfor
  */
@@ -34,11 +36,13 @@ export interface IPackageInfor {
  * @export
  */
 export async function init() {
+  if (await Path.isExist(path_packageJson)) {
+    Fail.Task.initFail('package.json is exist!')
+  }
   // Terminal res
   const name = await Terminal.getUserInput('Package name: ')
   if (!name) {
-    Terminal.Print.error('--- init failed ---')
-    Terminal.Print.error('<Package name> cannot be null!')
+    Fail.Task.initFail('<Package name> cannot be null!')
     return
   }
   const description = await Terminal.getUserInput('description: ')
@@ -64,6 +68,6 @@ export async function init() {
 
   await init_gitignore()
 
-  Terminal.Print.success('--- init successfully ---')
+  Success.Task.initSuccessfully()
   return
 }

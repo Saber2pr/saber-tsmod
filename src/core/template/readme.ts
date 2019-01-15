@@ -1,34 +1,42 @@
-# test
+/*
+ * @Author: AK-12
+ * @Date: 2019-01-15 13:15:11
+ * @Last Modified by:   AK-12
+ * @Last Modified time: 2019-01-15 13:15:11
+ */
+import { IPackageInfor } from '../tasks/__init__'
 
-> ttt
+export const readme = (packageInfor: IPackageInfor) => `# ${packageInfor.name}
 
-```bash
+> ${packageInfor.description}
+
+\`\`\`bash
 # from npm
-npm install test
+npm install ${packageInfor.name}
 
 # from github
-git clone ttt
-```
+git clone ${packageInfor.repository}
+\`\`\`
 
 ---
 
 ## start
 
-```bash
+\`\`\`bash
 # install the typescript and webpack
 npm install
-```
+\`\`\`
 
-```bash
+\`\`\`bash
 # auto compile to commonjs
 npm start
 
 # auto compile to es5
 npm run dev
 
-```
+\`\`\`
 
-> Author: ttt
+> Author: ${packageInfor.author}
 
 ---
 
@@ -54,8 +62,9 @@ npm run dev
 4. repository(url)
 5. author
 
-```bash
+\`\`\`bash
 # if all is well, try:
 npm publish
-```
+\`\`\`
 
+`
