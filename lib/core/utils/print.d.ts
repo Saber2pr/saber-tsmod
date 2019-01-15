@@ -1,5 +1,5 @@
-declare type TaskName_init = 'package.json' | 'README.md' | 'index.html' | '.gitignore';
-declare type TaskName_config = 'tsconfig' | 'webpack' | 'gitignore';
+type TaskName_init = 'package.json' | 'README.md' | 'index.html' | '.gitignore';
+type TaskName_config = 'tsconfig' | 'webpack' | 'gitignore';
 /**
  * Success
  * @exports

@@ -2,9 +2,9 @@
  * @Author: AK-12
  * @Date: 2019-01-13 13:14:13
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-15 15:20:02
+ * @Last Modified time: 2019-01-15 15:35:43
  */
-const version = '1.2.9'
+const version = '1.3.0'
 /**
  * Options
  */
