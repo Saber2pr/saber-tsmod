@@ -1,6 +1,6 @@
 {
   "name": "saber-tsmod",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "a cli for ts dev.",
   "repository": {
     "type": "git",
@@ -16,13 +16,11 @@
   ],
   "scripts": {
     "start": "tsc --watch",
-    "dev": "webpack --watch",
     "test": "node ./lib/index.js '_test'"
   },
   "bin": "./lib/index.js",
   "devDependencies": {
-    "typescript": "^3.2.1",
-    "webpack": "^3.12.0"
+    "typescript": "^3.2.1"
   },
   "dependencies": {
     "saber-node": "^1.1.2"
