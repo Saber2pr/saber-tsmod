@@ -1,13 +1,46 @@
-# test
+# saber-tsmod
 
-> ttt
+[![types](https://img.shields.io/npm/types/saber-tsmod.svg)](https://github.com/Microsoft/TypeScript)
+[![version](https://img.shields.io/npm/v/saber-tsmod.svg)](https://www.npmjs.com/package/saber-tsmod)
+[![license](https://img.shields.io/npm/l/saber-tsmod.svg)](https://github.com/Saber2pr/saber-tsmod/blob/master/LICENSE)
+[![github](https://img.shields.io/badge/github-saber2pr-blue.svg)](https://github.com/Saber2pr/saber-tsmod)
+
+> a cli for ts dev.
+
+> publish your ts module to npm!
 
 ```bash
-# from npm
-npm install test
+npm install saber-tsmod -g
+```
 
-# from github
-git clone ttt
+## Usage:
+
+1. init: init the project files.
+
+2. create `<module>`: create a new ts module file and its test file.
+
+3. config `<option>`: create config file of typescript or webpack.
+
+---
+
+```bash
+# create workspace
+mkdir <projectFolder>
+
+cd <projectFolder>
+
+# init project.
+saber-tsmod init
+
+# create module and test file.
+saber-tsmod create <module>
+
+# create config file
+# tsconfig.json
+saber-tsmod config ts
+# webpack.config.json
+saber-tsmod config webpack
+
 ```
 
 ---
@@ -15,20 +48,20 @@ git clone ttt
 ## start
 
 ```bash
-# install the typescript and webpack
+# install the typescript and webpack.
 npm install
 ```
 
 ```bash
-# auto compile to commonjs
+# auto compile to commonjs.
 npm start
 
-# auto compile to es5
+# auto compile to es5.
 npm run dev
 
 ```
 
-> Author: ttt
+## Author: saber2pr(AK-12)
 
 ---
 
@@ -58,4 +91,3 @@ npm run dev
 # if all is well, try:
 npm publish
 ```
-
