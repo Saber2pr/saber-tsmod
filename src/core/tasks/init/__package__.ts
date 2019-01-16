@@ -11,7 +11,7 @@ import { path_packageJson } from '../../../config/path.config'
 import { Fail, Success } from '../../utils/print'
 
 export async function init_PackageJson(packageInfor: IPackageInfor) {
-  if (await Path.isExist(path_packageJson)) {
+  if (Path.isExist(path_packageJson)) {
     Fail.Task.initFail('package.json is exist!')
     return
   }

@@ -12,7 +12,7 @@ import { tsconfig } from '../../template/tsconfig'
 import { path_tsconfig } from '../../../config/path.config'
 
 export async function init_Tsconfig() {
-  if (await Path.isExist(path_tsconfig)) {
+  if (Path.isExist(path_tsconfig)) {
     Fail.Task.configFail('tsconfig.json is existed!')
     return
   }

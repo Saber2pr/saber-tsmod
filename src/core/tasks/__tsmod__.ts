@@ -20,7 +20,7 @@ export async function createModuleFile(name: string) {
 
   const moduleFilePath = `${path_core}/${name}.ts`
   const moduleFileContent = module(name, rename).core
-  if (await Path.isExist(moduleFilePath)) {
+  if (Path.isExist(moduleFilePath)) {
     Fail.Task.createFail(name)
     return
   }
@@ -37,7 +37,7 @@ export async function createModuleFile(name: string) {
   const module_test = `import { test_${rename} } from '../test/test_${rename}'
 test_${rename}()\n\n`
 
-  if (!(await Path.isExist(test_entry))) {
+  if (!Path.isExist(test_entry)) {
     await File.createFile(test_entry, module_test)
   } else {
     await File.push(test_entry, module_test)
@@ -47,7 +47,7 @@ test_${rename}()\n\n`
   const export_entry = `${path_root}/index.ts`
   const export_entry_content = `export * from './core/${name}'\n`
 
-  if (!(await Path.isExist(export_entry))) {
+  if (!Path.isExist(export_entry)) {
     await File.createFile(export_entry, export_entry_content)
   } else {
     await File.push(export_entry, export_entry_content)

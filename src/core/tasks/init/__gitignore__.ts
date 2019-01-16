@@ -14,7 +14,7 @@ import { Fail, Success } from '../../utils/print'
  * @export
  */
 export async function init_gitignore() {
-  if (await Path.isExist(path_gitignore)) {
+  if (Path.isExist(path_gitignore)) {
     Fail.Task.configFail('.gitignore is existed!')
     return
   }

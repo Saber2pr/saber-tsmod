@@ -16,7 +16,7 @@ import { Fail, Success } from '../../utils/print'
  * @param {IPackageInfor} packageInfor
  */
 export async function init_ReadMe(packageInfor: IPackageInfor) {
-  if (await Path.isExist(path_readme)) {
+  if (Path.isExist(path_readme)) {
     Fail.Task.initFail('README.md is existed!')
     return
   }

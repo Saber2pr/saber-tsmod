@@ -16,7 +16,7 @@ import { path_webpackConfig } from '../../../config/path.config'
  * @export
  */
 export async function init_WebpackConfig() {
-  if (await Path.isExist(path_webpackConfig)) {
+  if (Path.isExist(path_webpackConfig)) {
     Fail.Task.configFail('webpack.config.js is existed!')
     return
   }

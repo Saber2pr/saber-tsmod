@@ -15,7 +15,7 @@ import { Fail, Success } from '../../utils/print'
  * @param {IPackageInfor} packageInfor
  */
 export async function init_Html(packageInfor: IPackageInfor) {
-  if (await Path.isExist(path_html)) {
+  if (Path.isExist(path_html)) {
     Fail.Task.configFail('index.html is existed!')
     return
   }
