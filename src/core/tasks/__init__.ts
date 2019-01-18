@@ -2,7 +2,7 @@
  * @Author: AK-12
  * @Date: 2019-01-12 17:02:13
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-18 10:07:16
+ * @Last Modified time: 2019-01-15 14:44:10
  */
 import { Terminal } from 'saber-node'
 import { init_PackageJson } from './init/__package__'
@@ -12,7 +12,6 @@ import { init_Tsconfig } from './init/__tsconfig__'
 import { init_WebpackConfig } from './init/__webpackConfig__'
 import { init_gitignore } from './init/__gitignore__'
 import { Fail } from '../utils/print'
-import { init_commonjs } from './init/__commonjs__'
 /**
  * @interface IPackageInfor
  */
@@ -24,12 +23,10 @@ export interface IPackageInfor {
   scripts?: {
     start: 'tsc --watch'
     dev: 'webpack --watch'
-    build: 'saber-commonjs'
   }
   devDependencies?: {
     typescript: '^3.2.1'
     webpack: '^3.12.0'
-    'saber-commonjs': '^1.0.7'
   }
 }
 /**
@@ -63,14 +60,6 @@ export async function init() {
   if (isInit_webpack === 'y') {
     await init_Html(packageInfor)
     await init_WebpackConfig()
-  } else {
-    const isInit_commonjs = await Terminal.getUserInput(
-      'config saber-commonjs?(y/n): '
-    )
-    if (isInit_commonjs === 'y') {
-      await init_Html(packageInfor)
-      await init_commonjs()
-    }
   }
 
   await init_gitignore()

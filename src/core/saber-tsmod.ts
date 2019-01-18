@@ -12,7 +12,6 @@ import { Options, TerminalLog } from './view/terminal-view'
 import { init_gitignore } from './tasks/init/__gitignore__'
 import { Terminal } from 'saber-node'
 import { egg } from './template/egg'
-import { init_commonjs } from './tasks/init/__commonjs__'
 /**
  * main_create
  *
@@ -42,10 +41,6 @@ async function main_config(param: string) {
 
     case Options.ConfigItems.git:
       await init_gitignore()
-      break
-
-    case Options.ConfigItems.commonjs:
-      await init_commonjs()
       break
 
     default:

@@ -4,7 +4,7 @@ import { Terminal } from 'saber-node'
  * @Author: AK-12
  * @Date: 2019-01-11 22:20:22
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-18 09:57:00
+ * @Last Modified time: 2019-01-15 15:27:20
  */
 let ROOT
 if (process.argv[2] === '_test') {
@@ -23,4 +23,3 @@ export const path_gitignore = `${ROOT}/.gitignore`
 export const path_readme = `${ROOT}/README.md`
 export const path_tsconfig = `${ROOT}/tsconfig.json`
 export const path_webpackConfig = `${ROOT}/webpack.config.js`
-export const path_commonjs = `${ROOT}/commonjs.json`

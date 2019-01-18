@@ -1,4 +1,4 @@
-type TaskName_init = 'package.json' | 'README.md' | 'index.html' | '.gitignore' | 'commonjs.json';
+type TaskName_init = 'package.json' | 'README.md' | 'index.html' | '.gitignore';
 type TaskName_config = 'tsconfig' | 'webpack' | 'gitignore';
 /**
  * Success
@@ -18,7 +18,7 @@ export declare namespace Success {
 export declare namespace Fail {
     namespace Task {
         const initFail: (type: "<Package name> cannot be null!" | "package.json is exist!" | "README.md is existed!") => void;
-        const configFail: (type: ".gitignore is existed!" | "tsconfig.json is existed!" | "webpack.config.js is existed!" | "index.html is existed!" | "commonjs.json is existed") => void;
+        const configFail: (type: ".gitignore is existed!" | "tsconfig.json is existed!" | "webpack.config.js is existed!" | "index.html is existed!") => void;
         const createFail: (name: string) => void;
     }
     namespace Package {
@@ -27,12 +27,12 @@ export declare namespace Fail {
              * script
              * @param scriptName
              */
-            const script: (scriptName: "start" | "dev" | "saber-commonjs") => void;
+            const script: (scriptName: "start" | "dev") => void;
             /**
              * devDependencie
              * @param devDependenceName
              */
-            const devDependencie: (devDependenceName: "webpack" | "saber-commonjs" | "typescript") => void;
+            const devDependencie: (devDependenceName: "webpack" | "typescript") => void;
         }
     }
 }

@@ -2,17 +2,12 @@
  * @Author: AK-12
  * @Date: 2019-01-15 12:42:56
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-18 10:05:08
+ * @Last Modified time: 2019-01-15 14:54:09
  */
 import { Terminal } from 'saber-node'
 import { TerminalLog } from '../view/terminal-view'
 
-type TaskName_init =
-  | 'package.json'
-  | 'README.md'
-  | 'index.html'
-  | '.gitignore'
-  | 'commonjs.json'
+type TaskName_init = 'package.json' | 'README.md' | 'index.html' | '.gitignore'
 type TaskName_config = 'tsconfig' | 'webpack' | 'gitignore'
 /**
  * Success
@@ -63,7 +58,6 @@ export namespace Fail {
         | 'tsconfig.json is existed!'
         | 'webpack.config.js is existed!'
         | 'index.html is existed!'
-        | 'commonjs.json is existed'
     ) => {
       Terminal.Print.error('--- config failed ---')
       Terminal.Print.error(type)
@@ -77,7 +71,7 @@ export namespace Fail {
        * script
        * @param scriptName
        */
-      export const script = (scriptName: 'start' | 'dev' | 'saber-commonjs') =>
+      export const script = (scriptName: 'start' | 'dev') =>
         Terminal.Print.error(
           `the scripts '${scriptName}' of 'package.json' is existed!`
         )
@@ -86,7 +80,7 @@ export namespace Fail {
        * @param devDependenceName
        */
       export const devDependencie = (
-        devDependenceName: 'typescript' | 'webpack' | 'saber-commonjs'
+        devDependenceName: 'typescript' | 'webpack'
       ) =>
         Terminal.Print.error(
           `the devDependence '${devDependenceName}'  of 'package.json' is existed!`
