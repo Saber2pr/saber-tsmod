@@ -4,7 +4,7 @@
  * @Last Modified by: AK-12
  * @Last Modified time: 2019-01-18 10:12:38
  */
-const version = '1.3.8'
+const version = '1.3.9'
 /**
  * Options
  */
@@ -29,7 +29,8 @@ export namespace Options {
   export enum ConfigItems {
     ts = 'ts',
     webpack = 'webpack',
-    git = 'git'
+    git = 'git',
+    commonjs = 'commonjs'
   }
 }
 /**
@@ -42,7 +43,8 @@ export namespace TerminalLog {
     config: "config <option> : option is 'ts' , 'webpack', or 'git'.",
     config_ts: `${Options.ConfigItems.ts} : create tsconfig.json`,
     config_webpack: `${Options.ConfigItems.webpack} : create webpack.config.js`,
-    config_git: `${Options.ConfigItems.git}: create .gitignore`
+    config_git: `${Options.ConfigItems.git}: create .gitignore`,
+    config_commonjs: `${Options.ConfigItems.commonjs}: create commonjs.json`
   }
   export const Hello = `
   ______________________________...
@@ -67,11 +69,12 @@ export namespace TerminalLog {
     `
     export const config = `
       ______________________________...
-      |choose a option:
+      |choose a option: config <option>
       |
       |1. ${options.config_ts}
       |2. ${options.config_webpack}
       |3. ${options.config_git}
+      |4. ${options.config_commonjs}
       |______________________________...
     `
   }
