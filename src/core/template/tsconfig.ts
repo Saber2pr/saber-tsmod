@@ -6,14 +6,14 @@
  */
 export const tsconfig = `{
   \"compilerOptions\": {
-     \"target\": \"es5\",
-     \"module\": \"commonjs\",
-     \"declaration\": true,
-     \"outDir\": \"./lib\",
-     \"esModuleInterop\": true,
-     \"lib\": [
-      \"dom\",
-      \"es2015\"
+    \"target\": \"es5\",
+    \"module\": \"commonjs\",
+    \"declaration\": true,
+    \"outDir\": \"./lib\",
+    \"esModuleInterop\": true,
+    \"lib\": [
+     \"dom\",
+     \"es2015\"
     ]
   },
   \"include\": [\"src\"],
