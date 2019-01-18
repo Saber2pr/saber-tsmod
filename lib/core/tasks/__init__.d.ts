@@ -9,10 +9,12 @@ export interface IPackageInfor {
     scripts?: {
         start: 'tsc --watch';
         dev: 'webpack --watch';
+        build: 'saber-commonjs';
     };
     devDependencies?: {
         typescript: '^3.2.1';
         webpack: '^3.12.0';
+        'saber-commonjs': '^1.0.7';
     };
 }
 /**
