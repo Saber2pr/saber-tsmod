@@ -1,6 +1,6 @@
 {
   "name": "saber-tsmod",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "a cli for ts dev.",
   "repository": {
     "type": "git",
@@ -16,7 +16,8 @@
   ],
   "scripts": {
     "start": "tsc --watch",
-    "test": "node ./lib/index.js '_test'"
+    "lau": "node ./lib/index.js '_test'",
+    "test": "node ./lib/test/test.js"
   },
   "bin": "./lib/index.js",
   "devDependencies": {

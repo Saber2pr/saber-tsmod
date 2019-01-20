@@ -2,12 +2,13 @@
  * @Author: AK-12
  * @Date: 2019-01-12 17:23:40
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-15 14:34:56
+ * @Last Modified time: 2019-01-20 07:09:06
  */
 import { path_core, path_root, path_test } from '../../config/path.config'
 import { File, Path } from 'saber-node'
 import { module } from '../template/module'
 import { Fail, Success } from '../utils/print'
+import { Name } from '../utils/rule'
 /**
  * createModuleFile
  *
@@ -16,7 +17,7 @@ import { Fail, Success } from '../utils/print'
  * @returns
  */
 export async function createModuleFile(name: string) {
-  const rename = name.replace(/-/g, '_')
+  const rename = Name.reset(name)
 
   const moduleFilePath = `${path_core}/${name}.ts`
   const moduleFileContent = module(name, rename).core
