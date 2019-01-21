@@ -3,6 +3,7 @@ interface tsmod {
     core: string;
     test: string;
 }
+export declare const path_tsmodJson: string;
 export declare const tsmodJson: tsmod;
 export declare const path_src: string;
 export declare const path_core: string;

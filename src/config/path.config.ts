@@ -2,7 +2,7 @@
  * @Author: AK-12
  * @Date: 2019-01-11 22:20:22
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-15 15:27:20
+ * @Last Modified time: 2019-01-21 06:58:13
  */
 import { Terminal, File, Path } from 'saber-node'
 
@@ -19,7 +19,7 @@ interface tsmod {
   core: string
   test: string
 }
-const path_tsmodJson = `${process.cwd()}/tsmod.json`
+export const path_tsmodJson = `${ROOT}/tsmod.json`
 export const tsmodJson: tsmod = Path.isExist(path_tsmodJson)
   ? File.Json.read(path_tsmodJson)
   : { src: 'src', core: 'core', test: 'test' }

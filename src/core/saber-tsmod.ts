@@ -2,7 +2,7 @@
  * @Author: AK-12
  * @Date: 2019-01-12 13:37:33
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-15 15:33:24
+ * @Last Modified time: 2019-01-21 07:05:27
  */
 import { createModuleFile } from './tasks/__tsmod__'
 import { init } from './tasks/__init__'
@@ -12,6 +12,7 @@ import { Options, TerminalLog } from './view/terminal-view'
 import { init_gitignore } from './tasks/init/__gitignore__'
 import { Terminal } from 'saber-node'
 import { egg } from './template/egg'
+import { init_tsmod } from './tasks/init/__tsmod__'
 /**
  * main_create
  *
@@ -41,6 +42,10 @@ async function main_config(param: string) {
 
     case Options.ConfigItems.git:
       await init_gitignore()
+      break
+
+    case Options.ConfigItems.tsmod:
+      await init_tsmod()
       break
 
     default:
