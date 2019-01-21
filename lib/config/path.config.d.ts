@@ -1,5 +1,4 @@
 interface tsmod {
-    src: string;
     core: string;
     test: string;
 }

@@ -15,16 +15,15 @@ if (process.argv[2] === '_test') {
 }
 
 interface tsmod {
-  src: string
   core: string
   test: string
 }
 export const path_tsmodJson = `${ROOT}/tsmod.json`
 export const tsmodJson: tsmod = Path.isExist(path_tsmodJson)
   ? File.Json.read(path_tsmodJson)
-  : { src: 'src', core: 'core', test: 'test' }
+  : { core: 'core', test: 'test' }
 
-export const path_src = `${ROOT}/${tsmodJson.src}`
+export const path_src = `${ROOT}/src`
 export const path_core = `${path_src}/${tsmodJson.core}`
 export const path_test = `${path_src}/${tsmodJson.test}`
 // file path

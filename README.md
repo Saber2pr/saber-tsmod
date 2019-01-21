@@ -25,7 +25,6 @@ npm install saber-tsmod -g
 
 ```json
 {
-  "src": "src",
   "core": "core",
   "test": "test"
 }

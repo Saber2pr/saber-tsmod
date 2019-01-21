@@ -4,7 +4,7 @@
  * @Last Modified by: AK-12
  * @Last Modified time: 2019-01-21 07:06:19
  */
-const version = '1.4.7'
+const version = '1.4.8'
 /**
  * Options
  */
