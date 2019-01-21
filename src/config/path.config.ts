@@ -1,11 +1,11 @@
-import { Terminal } from 'saber-node'
-
 /*
  * @Author: AK-12
  * @Date: 2019-01-11 22:20:22
  * @Last Modified by: AK-12
  * @Last Modified time: 2019-01-15 15:27:20
  */
+import { Terminal, File, Path } from 'saber-node'
+
 let ROOT
 if (process.argv[2] === '_test') {
   ROOT = `${process.cwd()}/__test__`
@@ -13,9 +13,20 @@ if (process.argv[2] === '_test') {
 } else {
   ROOT = process.cwd()
 }
-export const path_root = `${ROOT}/src`
-export const path_core = `${path_root}/core`
-export const path_test = `${path_root}/test`
+
+interface tsmod {
+  src: string
+  core: string
+  test: string
+}
+const path_tsmodJson = `${process.cwd()}/tsmod.json`
+export const tsmodJson: tsmod = Path.isExist(path_tsmodJson)
+  ? File.Json.read(path_tsmodJson)
+  : { src: 'src', core: 'core', test: 'test' }
+
+export const path_src = `${ROOT}/${tsmodJson.src}`
+export const path_core = `${path_src}/${tsmodJson.core}`
+export const path_test = `${path_src}/${tsmodJson.test}`
 // file path
 export const path_packageJson = `${ROOT}/package.json`
 export const path_html = `${ROOT}/index.html`

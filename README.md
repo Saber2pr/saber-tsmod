@@ -21,6 +21,16 @@ npm install saber-tsmod -g
 
 3. config `<option>`: create config file of typescript or webpack.
 
+> config tsmod.json
+
+```json
+{
+  "src": "src",
+  "core": "core",
+  "test": "test"
+}
+```
+
 ---
 
 ```bash
