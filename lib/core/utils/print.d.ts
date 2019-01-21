@@ -16,6 +16,9 @@ export declare namespace Success {
  * @exports
  */
 export declare namespace Fail {
+    namespace Find {
+        const noTsmodFile: () => void;
+    }
     namespace Task {
         const initFail: (type: "<Package name> cannot be null!" | "package.json is exist!" | "README.md is existed!") => void;
         const configFail: (type: ".gitignore is existed!" | "tsconfig.json is existed!" | "webpack.config.js is existed!" | "index.html is existed!") => void;

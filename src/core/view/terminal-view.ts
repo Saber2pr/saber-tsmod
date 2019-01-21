@@ -2,9 +2,9 @@
  * @Author: AK-12
  * @Date: 2019-01-13 13:14:13
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-21 08:12:30
+ * @Last Modified time: 2019-01-21 10:25:46
  */
-const version = '1.4.9'
+const version = '1.5.0'
 /**
  * Options
  */
@@ -39,6 +39,7 @@ export namespace TerminalLog {
   const options = {
     init: 'init: init the project files.',
     create: 'create <module> : create a new ts module and its test file.',
+    createWithConf: 'create ~c : create src use a tsmod.json file.',
     config: "config <option> : option is 'ts' , 'webpack', or 'git'.",
     config_ts: `${Options.ConfigItems.ts} : create tsconfig.json`,
     config_webpack: `${Options.ConfigItems.webpack} : create webpack.config.js`,
@@ -52,6 +53,7 @@ export namespace TerminalLog {
   | 
   | ${options.init}
   | ${options.create}
+  | ${options.createWithConf}
   | ${options.config}
   |
   |_____________________________...
@@ -60,8 +62,10 @@ export namespace TerminalLog {
     export const create = `
     ______________________________...
     |
-    |${options.create}
+    |1. ${options.create}
     |  you should set the name of module.
+    |
+    |2. ${options.createWithConf}
     |_____________________________...
 
     `

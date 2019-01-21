@@ -19,7 +19,9 @@ npm install saber-tsmod -g
 
 2. create `<module>`: create a new ts module file and its test file.
 
-3. config `<option>`: create config file of typescript or webpack.
+3. create ~c `<tsmod.json>`: create src by a tsmod.json file.
+
+4. config `<option>`: create config file of typescript or webpack.
 
 ---
 
@@ -34,6 +36,7 @@ saber-tsmod init
 
 # create module and test file.
 saber-tsmod create <module>
+saber-tsmod create ~c
 
 # for example:
 saber-tsmod create hello
@@ -42,12 +45,31 @@ saber-tsmod create shop/shop.service
 saber-tsmod create shop/shop.controller
 saber-tsmod create shop/shop.module
 
+saber-tsmod create shop/shop.service shop/shop.controller shop/shop.module
+
+saber-tsmod create ~c tsmod.json
+
 # create config file
 # tsconfig.json
 saber-tsmod config ts
 # webpack.config.json
 saber-tsmod config webpack
 
+```
+
+> for example(tsmod.json)
+
+```json
+{
+  "src": [
+    "users/controller",
+    "users/service",
+    "users/module",
+    "shop/controller",
+    "shop/service",
+    "shop/module"
+  ]
+}
 ```
 
 ---

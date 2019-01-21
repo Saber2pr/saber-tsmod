@@ -2,10 +2,11 @@
  * @Author: AK-12
  * @Date: 2019-01-15 12:42:56
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-15 14:54:09
+ * @Last Modified time: 2019-01-21 10:24:13
  */
 import { Terminal } from 'saber-node'
 import { TerminalLog } from '../view/terminal-view'
+import { path_tsmod } from '../../config/path.config'
 
 type TaskName_init = 'package.json' | 'README.md' | 'index.html' | '.gitignore'
 type TaskName_config = 'tsconfig' | 'webpack' | 'gitignore'
@@ -42,6 +43,10 @@ export namespace Success {
  * @exports
  */
 export namespace Fail {
+  export namespace Find {
+    export const noTsmodFile = () =>
+      Terminal.Print.error(`cannot found tsmod.json: ${path_tsmod}`)
+  }
   export namespace Task {
     export const initFail = (
       type:
