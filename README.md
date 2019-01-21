@@ -35,6 +35,13 @@ saber-tsmod init
 # create module and test file.
 saber-tsmod create <module>
 
+# for example:
+saber-tsmod create hello
+
+saber-tsmod create shop/shop.service
+saber-tsmod create shop/shop.controller
+saber-tsmod create shop/shop.module
+
 # create config file
 # tsconfig.json
 saber-tsmod config ts
