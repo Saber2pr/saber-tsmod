@@ -4,12 +4,7 @@
  * @Last Modified by: AK-12
  * @Last Modified time: 2019-01-20 07:09:06
  */
-import {
-  path_core,
-  path_src,
-  path_test,
-  tsmodJson
-} from '../../config/path.config'
+import { path_core, path_root, path_test } from '../../config/path.config'
 import { File, Path } from 'saber-node'
 import { module } from '../template/module'
 import { Fail, Success } from '../utils/print'
@@ -40,9 +35,7 @@ export async function createModuleFile(name: string) {
 
   // create test entry
   const test_entry = `${path_test}/test.ts`
-  const module_test = `import { test_${rename} } from '../${
-    tsmodJson.test
-  }/test_${rename}'
+  const module_test = `import { test_${rename} } from '../test/test_${rename}'
 test_${rename}()\n\n`
 
   if (!Path.isExist(test_entry)) {
@@ -52,8 +45,8 @@ test_${rename}()\n\n`
   }
 
   // create export
-  const export_entry = `${path_src}/index.ts`
-  const export_entry_content = `export * from './${tsmodJson.core}/${name}'\n`
+  const export_entry = `${path_root}/index.ts`
+  const export_entry_content = `export * from './core/${name}'\n`
 
   if (!Path.isExist(export_entry)) {
     await File.createFile(export_entry, export_entry_content)

@@ -2,13 +2,13 @@
  * @Author: AK-12
  * @Date: 2019-01-15 12:42:56
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-21 07:00:49
+ * @Last Modified time: 2019-01-15 14:54:09
  */
 import { Terminal } from 'saber-node'
 import { TerminalLog } from '../view/terminal-view'
 
 type TaskName_init = 'package.json' | 'README.md' | 'index.html' | '.gitignore'
-type TaskName_config = 'tsconfig' | 'webpack' | 'gitignore' | 'tsmod'
+type TaskName_config = 'tsconfig' | 'webpack' | 'gitignore'
 /**
  * Success
  * @exports
@@ -58,7 +58,6 @@ export namespace Fail {
         | 'tsconfig.json is existed!'
         | 'webpack.config.js is existed!'
         | 'index.html is existed!'
-        | 'tsmod.json is existed!'
     ) => {
       Terminal.Print.error('--- config failed ---')
       Terminal.Print.error(type)

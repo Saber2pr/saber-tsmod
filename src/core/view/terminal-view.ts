@@ -2,9 +2,9 @@
  * @Author: AK-12
  * @Date: 2019-01-13 13:14:13
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-21 07:06:19
+ * @Last Modified time: 2019-01-20 07:12:03
  */
-const version = '1.4.8'
+const version = '1.4.5'
 /**
  * Options
  */
@@ -29,8 +29,7 @@ export namespace Options {
   export enum ConfigItems {
     ts = 'ts',
     webpack = 'webpack',
-    git = 'git',
-    tsmod = 'tsmod'
+    git = 'git'
   }
 }
 /**
@@ -43,8 +42,7 @@ export namespace TerminalLog {
     config: "config <option> : option is 'ts' , 'webpack', or 'git'.",
     config_ts: `${Options.ConfigItems.ts} : create tsconfig.json`,
     config_webpack: `${Options.ConfigItems.webpack} : create webpack.config.js`,
-    config_git: `${Options.ConfigItems.git}: create .gitignore`,
-    config_tsmod: `${Options.ConfigItems.tsmod}: create tsmod.json`
+    config_git: `${Options.ConfigItems.git}: create .gitignore`
   }
   export const Hello = `
   ______________________________...
@@ -55,7 +53,7 @@ export namespace TerminalLog {
   | ${options.init}
   | ${options.create}
   | ${options.config}
-  | 
+  |
   |_____________________________...
   `
   export namespace Help {
@@ -74,7 +72,6 @@ export namespace TerminalLog {
       |1. ${options.config_ts}
       |2. ${options.config_webpack}
       |3. ${options.config_git}
-      |4. ${options.config_tsmod}
       |______________________________...
     `
   }
