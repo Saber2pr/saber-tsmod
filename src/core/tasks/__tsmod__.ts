@@ -28,14 +28,14 @@ export async function createModuleFile(name: string) {
   // create module file
   await File.createFile(moduleFilePath, moduleFileContent)
 
-  const moduleTest = `${path_test}/test_${rename}.ts`
+  const moduleTest = `${path_test}/${name}.ts`
   const moduleTestContent = module(name, rename).test
   // create module test file
   await File.createFile(moduleTest, moduleTestContent)
 
   // create test entry
   const test_entry = `${path_test}/test.ts`
-  const module_test = `import { test_${rename} } from '../test/test_${rename}'
+  const module_test = `import { test_${rename} } from './${name}'
 test_${rename}()\n\n`
 
   if (!Path.isExist(test_entry)) {

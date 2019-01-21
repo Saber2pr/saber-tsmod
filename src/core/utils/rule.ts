@@ -9,5 +9,5 @@ export namespace Rule {
     typeof obj === 'undefined'
 }
 export namespace Name {
-  export const reset = (name: string) => name.replace(/\-|\./g, '_')
+  export const reset = (name: string) => name.replace(/\-|\.|\//g, '_')
 }
