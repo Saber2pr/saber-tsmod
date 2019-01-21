@@ -60,16 +60,14 @@ saber-tsmod config webpack
 > for example(tsmod.json)
 
 ```json
-{
-  "src": [
-    "users/controller",
-    "users/service",
-    "users/module",
-    "shop/controller",
-    "shop/service",
-    "shop/module"
-  ]
-}
+[
+  "users/controller",
+  "users/service",
+  "users/module",
+  "shop/controller",
+  "shop/service",
+  "shop/module"
+]
 ```
 
 ---

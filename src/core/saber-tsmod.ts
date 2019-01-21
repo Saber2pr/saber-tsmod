@@ -14,9 +14,6 @@ import { Terminal, File, Path } from 'saber-node'
 import { egg } from './template/egg'
 import { path_tsmod } from '../config/path.config'
 import { Fail } from './utils/print'
-interface Tsmod {
-  src: string[]
-}
 /**
  * main_create
  *
@@ -71,7 +68,7 @@ export async function main() {
       const files = params.slice(1)
       if (files[0] === '~c' || files[0] === '~config') {
         if (Path.isExist(path_tsmod)) {
-          await main_create(File.Json.read<Tsmod>(path_tsmod).src)
+          await main_create(File.Json.read<string[]>(path_tsmod))
         } else {
           Fail.Find.noTsmodFile()
         }
