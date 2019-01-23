@@ -8,7 +8,7 @@ import { IPackageInfor } from '../tasks/__init__'
 
 export const packageJson = (packageInfor: IPackageInfor) => `{
   \"name\": \"${packageInfor.name}\",
-  \"version\": \"1.0.0\",
+  \"version\": \"0.0.1\",
   \"description\": \"${packageInfor.description}\",
   \"repository\": {
     \"type\": \"git\",
