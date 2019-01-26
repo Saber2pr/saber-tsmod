@@ -2,9 +2,9 @@
  * @Author: AK-12
  * @Date: 2019-01-13 13:14:13
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-26 16:05:44
+ * @Last Modified time: 2019-01-26 20:26:53
  */
-const version = '1.5.3'
+const version = '1.5.4'
 /**
  * Options
  */
@@ -29,7 +29,8 @@ export namespace Options {
   export enum ConfigItems {
     ts = 'ts',
     webpack = 'webpack',
-    git = 'git'
+    git = 'git',
+    rollup = 'rollup'
   }
 }
 /**
@@ -40,10 +41,11 @@ export namespace TerminalLog {
     init: 'init: init the project files.',
     create: 'create <module> : create a new ts module and its test file.',
     createWithConf: 'create ~c : create src use a tsmod.json file.',
-    config: "config <option> : option is 'ts' , 'webpack', or 'git'.",
+    config: "config <option> : option is 'ts' , 'webpack', 'git' or 'rollup'.",
     config_ts: `${Options.ConfigItems.ts} : create tsconfig.json`,
     config_webpack: `${Options.ConfigItems.webpack} : create webpack.config.js`,
-    config_git: `${Options.ConfigItems.git}: create .gitignore`
+    config_git: `${Options.ConfigItems.git}: create .gitignore`,
+    config_rollup: `${Options.ConfigItems.rollup}: create rollup.config.js`
   }
   export const Hello = `
   ______________________________...
@@ -76,6 +78,7 @@ export namespace TerminalLog {
       |1. ${options.config_ts}
       |2. ${options.config_webpack}
       |3. ${options.config_git}
+      |4. ${options.config_rollup}
       |______________________________...
     `
   }

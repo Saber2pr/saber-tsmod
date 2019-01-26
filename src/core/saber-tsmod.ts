@@ -2,7 +2,7 @@
  * @Author: AK-12
  * @Date: 2019-01-12 13:37:33
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-21 10:24:28
+ * @Last Modified time: 2019-01-26 19:38:45
  */
 import { createModuleFile } from './tasks/__tsmod__'
 import { init } from './tasks/__init__'
@@ -14,6 +14,7 @@ import { Terminal, File, Path } from 'saber-node'
 import { egg } from './template/egg'
 import { path_tsmod } from '../config/path.config'
 import { Fail } from './utils/print'
+import { init_rollupConfig } from './tasks/init/__rollupConfig__'
 /**
  * main_create
  *
@@ -45,6 +46,10 @@ async function main_config(param: string) {
 
     case Options.ConfigItems.git:
       await init_gitignore()
+      break
+
+    case Options.ConfigItems.rollup:
+      await init_rollupConfig()
       break
 
     default:

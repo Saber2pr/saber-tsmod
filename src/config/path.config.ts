@@ -4,7 +4,7 @@ import { Terminal } from 'saber-node'
  * @Author: AK-12
  * @Date: 2019-01-11 22:20:22
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-21 09:50:43
+ * @Last Modified time: 2019-01-26 19:36:11
  */
 let ROOT
 if (process.argv[2] === '_test') {
@@ -24,3 +24,4 @@ export const path_readme = `${ROOT}/README.md`
 export const path_tsconfig = `${ROOT}/tsconfig.json`
 export const path_webpackConfig = `${ROOT}/webpack.config.js`
 export const path_tsmod = `${ROOT}/tsmod.json`
+export const path_rollupConfig = `${ROOT}/rollup.config.js`

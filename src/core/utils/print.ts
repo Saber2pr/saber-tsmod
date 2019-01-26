@@ -2,34 +2,20 @@
  * @Author: AK-12
  * @Date: 2019-01-15 12:42:56
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-21 10:24:13
+ * @Last Modified time: 2019-01-26 20:25:59
  */
 import { Terminal } from 'saber-node'
 import { TerminalLog } from '../view/terminal-view'
 import { path_tsmod } from '../../config/path.config'
 
-type TaskName_init = 'package.json' | 'README.md' | 'index.html' | '.gitignore'
-type TaskName_config = 'tsconfig' | 'webpack' | 'gitignore'
 /**
  * Success
  * @exports
  */
 export namespace Success {
   export namespace Task {
-    export const initSuccessfully = (
-      taskName: TaskName_init,
-      message?: string
-    ) => {
+    export const successfully = (taskName: string, message?: string) => {
       Terminal.Print.tips(`--- init ${taskName} successfully ---`)
-      if (message) {
-        Terminal.Print.success(message)
-      }
-    }
-    export const configSuccessfully = (
-      taskName: TaskName_config,
-      message?: string
-    ) => {
-      Terminal.Print.tips(`--- config ${taskName} successfully ---`)
       if (message) {
         Terminal.Print.success(message)
       }
@@ -48,22 +34,11 @@ export namespace Fail {
       Terminal.Print.error(`cannot found tsmod.json: ${path_tsmod}`)
   }
   export namespace Task {
-    export const initFail = (
-      type:
-        | '<Package name> cannot be null!'
-        | 'package.json is exist!'
-        | 'README.md is existed!'
-    ) => {
+    export const initFail = (type: string) => {
       Terminal.Print.error('--- init failed ---')
       Terminal.Print.error(type)
     }
-    export const configFail = (
-      type:
-        | '.gitignore is existed!'
-        | 'tsconfig.json is existed!'
-        | 'webpack.config.js is existed!'
-        | 'index.html is existed!'
-    ) => {
+    export const configFail = (type: string) => {
       Terminal.Print.error('--- config failed ---')
       Terminal.Print.error(type)
     }
@@ -85,7 +60,11 @@ export namespace Fail {
        * @param devDependenceName
        */
       export const devDependencie = (
-        devDependenceName: 'typescript' | 'webpack'
+        devDependenceName:
+          | 'typescript'
+          | 'webpack'
+          | 'rollup'
+          | 'rollup-plugin-commonjs'
       ) =>
         Terminal.Print.error(
           `the devDependence '${devDependenceName}'  of 'package.json' is existed!`

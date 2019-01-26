@@ -22,7 +22,8 @@ export declare namespace Options {
     enum ConfigItems {
         ts = "ts",
         webpack = "webpack",
-        git = "git"
+        git = "git",
+        rollup = "rollup"
     }
 }
 /**

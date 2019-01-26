@@ -8,3 +8,4 @@ export declare const path_readme: string;
 export declare const path_tsconfig: string;
 export declare const path_webpackConfig: string;
 export declare const path_tsmod: string;
+export declare const path_rollupConfig: string;

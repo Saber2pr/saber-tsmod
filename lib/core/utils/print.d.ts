@@ -1,13 +1,10 @@
-type TaskName_init = 'package.json' | 'README.md' | 'index.html' | '.gitignore';
-type TaskName_config = 'tsconfig' | 'webpack' | 'gitignore';
 /**
  * Success
  * @exports
  */
 export declare namespace Success {
     namespace Task {
-        const initSuccessfully: (taskName: TaskName_init, message?: string) => void;
-        const configSuccessfully: (taskName: TaskName_config, message?: string) => void;
+        const successfully: (taskName: string, message?: string) => void;
         const createSuccessfully: (filePath: string) => void;
     }
 }
@@ -20,8 +17,8 @@ export declare namespace Fail {
         const noTsmodFile: () => void;
     }
     namespace Task {
-        const initFail: (type: "<Package name> cannot be null!" | "package.json is exist!" | "README.md is existed!") => void;
-        const configFail: (type: ".gitignore is existed!" | "tsconfig.json is existed!" | "webpack.config.js is existed!" | "index.html is existed!") => void;
+        const initFail: (type: string) => void;
+        const configFail: (type: string) => void;
         const createFail: (name: string) => void;
     }
     namespace Package {
@@ -35,8 +32,7 @@ export declare namespace Fail {
              * devDependencie
              * @param devDependenceName
              */
-            const devDependencie: (devDependenceName: "webpack" | "typescript") => void;
+            const devDependencie: (devDependenceName: "typescript" | "webpack" | "rollup" | "rollup-plugin-commonjs") => void;
         }
     }
 }
-export {};
