@@ -1,3 +1,9 @@
-import { Name } from '../core/utils/rule'
+import { Path } from 'saber-node'
 
-console.log(Name.reset('ok-this.saber-common-js.control.test.mod'))
+/**
+ * 'com/main.control' => com/main.control.ts
+ * 'com/main.control.tsx' => com/main.control.tsx
+ *
+ */
+
+console.log(Path.split('com/main.control.tsx'))

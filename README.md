@@ -61,12 +61,12 @@ saber-tsmod config webpack
 
 ```json
 [
-  "users/controller",
-  "users/service",
-  "users/module",
-  "shop/controller",
-  "shop/service",
-  "shop/module"
+  "users/controller.ts",
+  "users/service.ts",
+  "users/module.ts",
+  "shop/controller.ts",
+  "shop/service.ts",
+  "shop/module.ts"
 ]
 ```
 

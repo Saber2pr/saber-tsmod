@@ -2,7 +2,7 @@
  * @Author: AK-12
  * @Date: 2019-01-12 17:23:40
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-20 07:09:06
+ * @Last Modified time: 2019-01-26 15:51:23
  */
 import { path_core, path_root, path_test } from '../../config/path.config'
 import { File, Path } from 'saber-node'
@@ -16,10 +16,12 @@ import { Name } from '../utils/rule'
  * @param {string} name
  * @returns
  */
-export async function createModuleFile(name: string) {
-  const rename = Name.reset(name)
+export async function createModuleFile($name: string) {
+  const rename = Name.reset($name)
+  const { str, type } = Path.split($name)
+  const name = str
 
-  const moduleFilePath = `${path_core}/${name}.ts`
+  const moduleFilePath = `${path_core}/${name}.${type}`
   const moduleFileContent = module(name, rename).core
   if (Path.isExist(moduleFilePath)) {
     Fail.Task.createFail(name)
@@ -28,13 +30,13 @@ export async function createModuleFile(name: string) {
   // create module file
   await File.createFile(moduleFilePath, moduleFileContent)
 
-  const moduleTest = `${path_test}/${name}.ts`
+  const moduleTest = `${path_test}/${name}.${type}`
   const moduleTestContent = module(name, rename).test
   // create module test file
   await File.createFile(moduleTest, moduleTestContent)
 
   // create test entry
-  const test_entry = `${path_test}/test.ts`
+  const test_entry = `${path_test}/test.${type}`
   const module_test = `import { test_${rename} } from './${name}'
 test_${rename}()\n\n`
 
@@ -45,7 +47,7 @@ test_${rename}()\n\n`
   }
 
   // create export
-  const export_entry = `${path_root}/index.ts`
+  const export_entry = `${path_root}/index.${type}`
   const export_entry_content = `export * from './core/${name}'\n`
 
   if (!Path.isExist(export_entry)) {
