@@ -2,7 +2,7 @@
  * @Author: AK-12
  * @Date: 2019-01-12 17:02:13
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-26 20:43:38
+ * @Last Modified time: 2019-01-26 20:48:38
  */
 import { Terminal } from 'saber-node'
 import { init_PackageJson } from './init/__package__'
@@ -13,6 +13,7 @@ import { init_WebpackConfig } from './init/__webpackConfig__'
 import { init_gitignore } from './init/__gitignore__'
 import { Fail } from '../utils/print'
 import { init_rollupConfig } from './init/__rollupConfig__'
+import { TerminalLog } from '../view/terminal-view'
 /**
  * @interface IPackageInfor
  */
@@ -60,11 +61,7 @@ export async function init() {
   await init_ReadMe(packageInfor)
   await init_Tsconfig()
 
-  const Init_Options = await Terminal.getUserInput(`
-  config webpack or rollup?(No): 
-    1. webpack
-    2. rollup
-  [select(1|2)]:`)
+  const Init_Options = await Terminal.getUserInput(TerminalLog.Select.config)
   if (Init_Options === '1') {
     await init_Html(packageInfor)
     await init_WebpackConfig()

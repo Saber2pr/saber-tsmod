@@ -2,7 +2,7 @@
  * @Author: AK-12
  * @Date: 2019-01-13 13:14:13
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-26 20:26:53
+ * @Last Modified time: 2019-01-26 20:48:21
  */
 const version = '1.5.4'
 /**
@@ -60,6 +60,13 @@ export namespace TerminalLog {
   |
   |_____________________________...
   `
+  export namespace Select {
+    export const config = `
+    config webpack or rollup?(No): 
+      1. webpack
+      2. rollup
+    [select(1|2)]:`
+  }
   export namespace Help {
     export const create = `
     ______________________________...

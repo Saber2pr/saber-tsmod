@@ -4,7 +4,7 @@ import { Terminal } from 'saber-node'
  * @Author: AK-12
  * @Date: 2019-01-11 22:20:22
  * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-26 19:36:11
+ * @Last Modified time: 2019-01-26 20:48:12
  */
 let ROOT
 if (process.argv[2] === '_test') {

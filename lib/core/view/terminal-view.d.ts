@@ -31,6 +31,9 @@ export declare namespace Options {
  */
 export declare namespace TerminalLog {
     const Hello: string;
+    namespace Select {
+        const config = "\n    config webpack or rollup?(No): \n      1. webpack\n      2. rollup\n    [select(1|2)]:";
+    }
     namespace Help {
         const create: string;
         const config: string;
