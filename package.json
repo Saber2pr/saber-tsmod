@@ -1,6 +1,6 @@
 {
   "name": "saber-tsmod",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "description": "a cli for ts dev.",
   "repository": {
     "type": "git",

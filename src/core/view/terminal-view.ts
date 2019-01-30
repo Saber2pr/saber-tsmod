@@ -1,10 +1,10 @@
 /*
  * @Author: AK-12
  * @Date: 2019-01-13 13:14:13
- * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-26 20:48:21
+ * @Last Modified by: saber2pr
+ * @Last Modified time: 2019-01-30 19:22:32
  */
-const version = '1.5.4'
+const version = '1.5.5'
 /**
  * Options
  */
