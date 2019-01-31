@@ -7,7 +7,7 @@ import { Path } from 'saber-node'
  * @Last Modified time: 2019-01-21 08:10:57
  */
 export const module = (name: string, variable: string) => ({
-  core: `export let ${variable} = '${name}'`,
+  core: `export const ${variable} = '${name}'`,
   test: `import { ${variable} } from '../${Path.makePathStep(
     Path.slashCount(name)
   )}core/${name}'\n

@@ -6,14 +6,13 @@
  */
 export const rollupConfig = `import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
-const packageJson = require(\`$\{process.cwd()\}/package.json\`)
 
 export default {
   input: './lib/test/test.js',
   output: {
     file: 'build/bundle.js',
     format: 'iife',
-    name: packageJson.name
+    name: 'test'
   },
   watch: {
     include: 'lib/**'
