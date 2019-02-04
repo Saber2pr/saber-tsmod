@@ -16,5 +16,6 @@ export const tsconfig = `{
      \"es2015\"
     ]
   },
+  \"include\": [\"src\"],
   \"exclude\": [\"node_modules\", \"lib\"]
 }`

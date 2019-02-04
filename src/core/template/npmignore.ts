@@ -6,4 +6,5 @@
  */
 export const npmignore = `src/
 lib/test/
-build/`
+build/
+tsconfig.json`
