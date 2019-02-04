@@ -1,8 +1,8 @@
 /*
  * @Author: AK-12
  * @Date: 2019-01-15 13:01:52
- * @Last Modified by:   AK-12
- * @Last Modified time: 2019-01-15 13:01:52
+ * @Last Modified by: saber2pr
+ * @Last Modified time: 2019-02-04 14:45:41
  */
 export const tsconfig = `{
   \"compilerOptions\": {
@@ -16,6 +16,5 @@ export const tsconfig = `{
      \"es2015\"
     ]
   },
-  \"include\": [\"src\"],
-  \"exclude\": [\"node_modules\"]
+  \"exclude\": [\"node_modules\", \"lib\"]
 }`
