@@ -1,8 +1,8 @@
 /*
  * @Author: AK-12
  * @Date: 2019-01-12 13:37:33
- * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-26 19:38:45
+ * @Last Modified by: saber2pr
+ * @Last Modified time: 2019-02-04 14:43:28
  */
 import { createModuleFile } from './tasks/__tsmod__'
 import { init } from './tasks/__init__'
@@ -15,6 +15,7 @@ import { egg } from './template/egg'
 import { path_tsmod } from '../config/path.config'
 import { Fail } from './utils/print'
 import { init_rollupConfig } from './tasks/init/__rollupConfig__'
+import { init_npmignore } from './tasks/init/__npmignore__'
 /**
  * main_create
  *
@@ -50,6 +51,9 @@ async function main_config(param: string) {
 
     case Options.ConfigItems.rollup:
       await init_rollupConfig()
+      break
+    case Options.ConfigItems.npm:
+      await init_npmignore()
       break
 
     default:

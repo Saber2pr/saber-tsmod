@@ -2,9 +2,9 @@
  * @Author: AK-12
  * @Date: 2019-01-13 13:14:13
  * @Last Modified by: saber2pr
- * @Last Modified time: 2019-01-30 19:22:32
+ * @Last Modified time: 2019-02-04 14:42:41
  */
-const version = '1.5.6'
+const version = '1.5.7'
 /**
  * Options
  */
@@ -30,7 +30,8 @@ export namespace Options {
     ts = 'ts',
     webpack = 'webpack',
     git = 'git',
-    rollup = 'rollup'
+    rollup = 'rollup',
+    npm = 'npm'
   }
 }
 /**
@@ -45,6 +46,7 @@ export namespace TerminalLog {
     config_ts: `${Options.ConfigItems.ts} : create tsconfig.json`,
     config_webpack: `${Options.ConfigItems.webpack} : create webpack.config.js`,
     config_git: `${Options.ConfigItems.git}: create .gitignore`,
+    config_npm: `${Options.ConfigItems.npm}: create .npmignore`,
     config_rollup: `${Options.ConfigItems.rollup}: create rollup.config.js`
   }
   export const Hello = `
@@ -86,6 +88,7 @@ export namespace TerminalLog {
       |2. ${options.config_webpack}
       |3. ${options.config_git}
       |4. ${options.config_rollup}
+      |5. ${options.config_npm}
       |______________________________...
     `
   }

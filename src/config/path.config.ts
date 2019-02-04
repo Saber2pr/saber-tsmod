@@ -3,8 +3,8 @@ import { Terminal } from 'saber-node'
 /*
  * @Author: AK-12
  * @Date: 2019-01-11 22:20:22
- * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-26 20:48:12
+ * @Last Modified by: saber2pr
+ * @Last Modified time: 2019-02-04 14:40:16
  */
 let ROOT
 if (process.argv[2] === '_test') {
@@ -20,6 +20,7 @@ export const path_test = `${path_root}/test`
 export const path_packageJson = `${ROOT}/package.json`
 export const path_html = `${ROOT}/index.html`
 export const path_gitignore = `${ROOT}/.gitignore`
+export const path_npmignore = `${ROOT}/.npmignore`
 export const path_readme = `${ROOT}/README.md`
 export const path_tsconfig = `${ROOT}/tsconfig.json`
 export const path_webpackConfig = `${ROOT}/webpack.config.js`

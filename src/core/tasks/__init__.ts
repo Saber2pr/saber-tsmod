@@ -1,8 +1,8 @@
 /*
  * @Author: AK-12
  * @Date: 2019-01-12 17:02:13
- * @Last Modified by: AK-12
- * @Last Modified time: 2019-01-26 20:48:38
+ * @Last Modified by: saber2pr
+ * @Last Modified time: 2019-02-04 14:43:01
  */
 import { Terminal } from 'saber-node'
 import { init_PackageJson } from './init/__package__'
@@ -14,6 +14,7 @@ import { init_gitignore } from './init/__gitignore__'
 import { Fail } from '../utils/print'
 import { init_rollupConfig } from './init/__rollupConfig__'
 import { TerminalLog } from '../view/terminal-view'
+import { init_npmignore } from './init/__npmignore__'
 /**
  * @interface IPackageInfor
  */
@@ -71,6 +72,7 @@ export async function init() {
   }
 
   await init_gitignore()
+  await init_npmignore()
 
   return
 }
