@@ -7,4 +7,7 @@
 export const npmignore = `src/
 lib/test/
 build/
-tsconfig.json`
+tsconfig.json
+rollup.config.js
+webpack.config.js
+index.html`
