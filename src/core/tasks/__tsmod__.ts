@@ -18,9 +18,13 @@ import { Name } from '../utils/rule'
  */
 export async function createModuleFile($name: string) {
   const rename = Name.reset($name)
-  const { str, type } = Path.split($name)
-  const name = str
-
+  const resolv = Path.split($name)
+  let name = resolv.str
+  let type = resolv.type
+  if (!Name.pass(type)) {
+    name = type
+    type = Name.passtype(resolv.type)
+  }
   const moduleFilePath = `${path_core}/${name}.${type}`
   const moduleFileContent = module(name, rename).core
   if (Path.isExist(moduleFilePath)) {
