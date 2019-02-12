@@ -10,7 +10,7 @@ export namespace Rule {
 }
 export namespace Name {
   export const reset = (name: string) => name.replace(/\-|\.|\//g, '_')
-  const types = ['ts', 'js']
+  const types = ['ts', 'js', 'tsx', 'jsx']
   export const pass = (type: string) => types.indexOf(type) !== -1
   export const passtype = (type: string): string => {
     if (!pass(type)) {
