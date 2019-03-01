@@ -72,7 +72,6 @@ export async function init() {
   }
 
   await init_gitignore()
-  await init_npmignore()
 
   return
 }

@@ -16,6 +16,10 @@ export const packageJson = (packageInfor: IPackageInfor) => `{
   },
   \"author\": \"${packageInfor.author}\",
   \"license\": \"ISC\",
+  \"files\": [
+    \"lib/core/*\",
+    \"lib/index.*\"
+  ],
   \"main\": \"./lib/index.js\",
   \"scripts\": {
     \"test\": \"node ./lib/test/test.js\"
