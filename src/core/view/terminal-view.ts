@@ -4,7 +4,7 @@
  * @Last Modified by: saber2pr
  * @Last Modified time: 2019-02-04 14:42:41
  */
-const version = '1.6.2'
+const version = '1.6.4'
 /**
  * Options
  */
