@@ -28,7 +28,7 @@ export interface IPackageInfor {
     dev: 'webpack --watch' | 'rollup -c --watch'
   }
   devDependencies?: {
-    typescript: '^3.2.1'
+    typescript: '^3.4.3'
     webpack: '^3.12.0'
     rollup: '^1.1.2'
     'rollup-plugin-commonjs': '^9.2.0'

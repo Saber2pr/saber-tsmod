@@ -19,7 +19,7 @@ export async function init_Tsconfig() {
       if (Rule.isUndefined(packageData.scripts.start)) {
         packageData.scripts.start = 'tsc --watch'
         if (Rule.isUndefined(packageData.devDependencies.typescript)) {
-          packageData.devDependencies.typescript = '^3.2.1'
+          packageData.devDependencies.typescript = '^3.4.3'
         } else {
           Fail.Package.Existed.devDependencie('typescript')
         }
